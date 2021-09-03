@@ -1,0 +1,47 @@
+.indexbody { 
+    background-image: url("bg6.jpg"); 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;       
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+    width:100%; 
+    
+}   
+@media screen and (min-width: 100px) and (max-width: 480px) {
+    .indexbody {
+        background-image: url("phone2.jpg"); 
+        background-repeat: no-repeat; 
+        background-position: center;
+        background-attachment: fixed;       
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height:100%;
+        width:100%; 
+    }
+  }
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    .indexbody{
+        background-image: url("phone2.jpg"); 
+        background-repeat: no-repeat; 
+        background-position: center;
+        background-attachment: fixed;       
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height:100%;
+        width:100%; 
+    }
+  }
+.bgf{
+        margin: 0 auto; 
+       
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
