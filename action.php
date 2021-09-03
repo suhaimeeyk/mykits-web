@@ -2,7 +2,7 @@
 
     $connect = new PDO("mysql:host=localhost;dbname=expmykits", "root", "" );
     $receiced_data = json_decode(file_get_contents("php://input"));
-    $data = array(); //
+    $data = array(); ////ssss
 
     if ($receiced_data->action == "fetchall") {
         $query = "SELECT * FROM dbsentaddmin";
