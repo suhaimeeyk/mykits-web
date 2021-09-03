@@ -16,14 +16,6 @@ let app = new Vue({
               app.allData = res.data;
           })
       },
-      fetchRegister() {
-        axios.post('action.php', {
-            action: 'fetchregister'
-        }).then(res => {
-            app.register = res.data;
-            console.log("fetchregis");
-        })
-    },
       openModal() {
           app.namesentaddmin = '';
           app.actionButton = 'SENT';
@@ -72,22 +64,21 @@ let app = new Vue({
             }
           }
       },
-    fetchuserData(id) {
+      fetchData(id) {
         axios.post('action.php', {
-            iduser: iduser,
-            action: 'fetchuserSingle'
+            id: id,
+            action: 'fetchSingle'
 
         }).then(res => {
-            app.nameuser = res.data.nameuser;
-            app.addressuser = res.data.addressuser;
-            app.phoneuser = res.data.phoneuser;
-            app.idprefix = res.data.idprefix;
-            app.idsex = res.data.idsex;
-            app.idposition = res.data.idposition;
-
-            app.hiddenId = res.data.iduser;
+            app.name = res.data.name;
+            app.description = res.data.description;
+            app.price = res.data.price;
+            app.category_id = res.data.category_id;
+            app.created = res.data.created;
+            
+            app.hiddenId = res.data.id;
             app.myModal = true;
-            app.actionButton = 'Updateuser';
+            app.actionButton = 'Update';
             app.dyynamicTitle = 'Edit Data';
         });
     },
@@ -98,6 +89,44 @@ let app = new Vue({
                 idsentaddmin: idsentaddmin
             }).then(res => {
                 app.fetchAllData();
+                alert(res.data.massage);
+            });
+        }
+    },
+    fetchRegister() {
+        axios.post('action.php', {
+            action: 'fetchregister'
+        }).then(res => {
+            app.register = res.data;
+            console.log("fetchregis");
+        })
+    },
+    edituserDataUser(iduser) {
+        axios.post('action.php', {
+            iduser: iduser,
+            action: 'editUser'
+
+        }).then(res => {
+            app.nameuser = res.data.nameuser;
+            app.nameprefix = res.data.nameprefix;
+            app.addressuser = res.data.addressuser;
+            app.phoneuser = res.data.phoneuser;
+            app.namesex = res.data.namesex;
+            app.namepossition = res.data.namepossition;
+            
+            app.hiddenId = res.data.iduser;
+            app.myModal = true;
+            app.actionButton = 'Update';
+            app.dyynamicTitle = 'Edit Data';
+        });
+    },
+    deleteDataUser(iduser) {
+        if (confirm("Are you Sure ?")) {
+            axios.post('action.php', {
+                action: 'deleteUser',
+                iduser: iduser
+            }).then(res => {
+                app.fetchRegister();
                 alert(res.data.massage);
             });
         }

@@ -153,7 +153,7 @@
                 <div class="wrap-table100">
 
                     <div class="table100 ver1 " style='overflow-x:auto'>
-                        <div id="app"  v-cloak>
+                        <div id="app" v-cloak>
                             <table data-vertable="ver1">
                                 <thead>
                                     <tr class="row100 head">
@@ -189,44 +189,51 @@
                                     <tr class="row100" v-for="user in register">
                                         <td class="column100 column2" data-column="column2">
                                             <h6 class="text-center">
-                                            {{ user.iduser }} </h6>
+                                                {{ user.iduser }}
+                                            </h6>
                                         </td>
                                         <td class="column100 column4" data-column="column4">
-                                            <h6 class="text-container">
-                                            {{ user.idprefix }} {{ user.nameuser }}  </h6>
+                                            <h6 class="text-center">
+                                                {{ user.nameprefix }}{{ user.nameuser }}
+                                                
+                                            </h6>
                                         </td>
                                         <td class="column100 column5" data-column="column5">
-                                            <h6 class="text-container">
-                                            {{ user.addressuser }} </h6>
+                                            <h6 class="text-center">
+                                                {{ user.addressuser }}
+                                            </h6>
                                         </td>
                                         <td class="column100 column6" data-column="column6">
                                             <h6 class="text-center">
-                                            {{ user.phoneuser }}  </h6>
+                                                {{ user.phoneuser }}
+                                            </h6>
                                         </td>
                                         <td class="column100 column6" data-column="column6">
                                             <h6 class="text-center">
-                                            {{ user.idsex }}  </h6>
+                                                {{ user.namesex }}
+                                            </h6>
                                         </td>
                                         <td class="column100 column7" data-column="column7">
                                             <h6 class="text-center">
-                                            {{ user.idposition }}  </h6>
-                                        </td>
-                                        <td class="column100 column8" data-column="column8">
-                                            <h6 class="text-center">
-                                            <button type="button" name="edituser" class="btn btn-success btn-xs delete"
-                                                data-bs-toggle="modal" data-bs-target="#myModal"
-                                                @click="edituserData(user.iduser)">
-                                                Delete
-                                            </button>
+                                                {{ user.namepossition }}
                                             </h6>
                                         </td>
                                         <td class="column100 column8" data-column="column8">
                                             <h6 class="text-center">
-                                            <button type="button" name="deleteuser" class="btn btn-danger btn-xs deleteuser"
-                                                data-bs-toggle="modal" data-bs-target="#myModal"
-                                                @click="deleteuserData(user.iduser)">
-                                                Delete
-                                            </button>
+                                                <button type="button" name="edituser"
+                                                    class="btn btn-success btn-xs delete" data-bs-toggle="modal"
+                                                    data-bs-target="#myModal" @click="edituserDataUser(user.iduser)">
+                                                    Edit
+                                                </button>
+                                            </h6>
+                                        </td>
+                                        <td class="column100 column8" data-column="column8">
+                                            <h6 class="text-center">
+                                                <button type="button" name="deleteuser"
+                                                    class="btn btn-danger btn-xs deleteuser" data-bs-toggle="modal"
+                                                    data-bs-target="#myModal" @click="deleteDataUser(user.iduser)">
+                                                    Delete
+                                                </button>
                                             </h6>
                                         </td>
                                     </tr>
