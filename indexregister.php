@@ -195,7 +195,7 @@
                                         <td class="column100 column4" data-column="column4">
                                             <h6 class="text-center">
                                                 {{ user.nameprefix }}{{ user.nameuser }}
-                                                
+
                                             </h6>
                                         </td>
                                         <td class="column100 column5" data-column="column5">
@@ -222,7 +222,7 @@
                                             <h6 class="text-center">
                                                 <button type="button" name="edituser"
                                                     class="btn btn-success btn-xs delete" data-bs-toggle="modal"
-                                                    data-bs-target="#myModal" @click="edituserDataUser(user.iduser)">
+                                                    data-bs-target="#myModal" @click="fetchuserDataUser(user.iduser)">
                                                     Edit
                                                 </button>
                                             </h6>
@@ -239,6 +239,51 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+
+                            <div v-if="myModal" class="modal fade" id="myModal" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="idprefix">idprefix</label>
+                                                <input type="text" class="form-control" v-model="idprefix">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="nameuser">nameuser</label>
+                                                <input type="text" class="form-control" v-model="nameuser">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="addressuser">addressuser</label>
+                                                <input type="text" class="form-control" v-model="addressuser">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="phoneuser">phoneuser</label>
+                                                <input type="text" class="form-control" v-model="phoneuser">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="idsex">idsex</label>
+                                                <input type="text" class="form-control" v-model="idsex">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="idposition">idposition</label>
+                                                <input class="form-control" type="date" v-model="idposition">
+                                            </div>
+                                            <br>
+                                            <div class="modal-footer">
+                                                <input type="hidden" v-model="hiddenId">
+                                                <input type="button" v-model="actionButton" @click="submitData"
+                                                    class="btn btn-success btn-xs">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
                         </div>
                     </div>
 
@@ -347,7 +392,12 @@
     <script src="app.js"></script>
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

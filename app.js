@@ -36,52 +36,37 @@ let app = new Vue({
                       window.location.reload();
                   });
               }
-              if (app.actionButton == 'Updateuser') {
-                axios.post('action.php', {
-                    action: 'updateuser',
-                    nameuser: app.nameuser,
-                    addressuser: app.addressuser,
-                    phoneuser: app.phoneuser,
-                    idprefix: app.idprefix,
-                    idsex: app.idsex,
-                    idposition: app.idposition,
-                    hiddenId: app.hiddenId
-                }).then(res => {
-                    app.myModal = false;
-                    app.fetchRegister();
-
-                    app.nameuser = '';
-                    app.addressuser = '';
-                    app.phoneuser = '';
-                    app.idprefix = '';
-                    app.idsex = '';
-                    app.idposition = '';
-
-                    app.hiddenId = '';
-                    alert(res.data.message);
-                    window.location.reload();
-                })
-            }
           }
-      },
-      fetchData(id) {
-        axios.post('action.php', {
-            id: id,
-            action: 'fetchSingle'
+          if (app.nameuser != '' && app.idprefix != '' && app.addressuser != '' && app.phoneuser != '' &&
+          app.idsex != ''  && app.idposition != '') {
+            if (app.actionButton == 'Updateuser') {
+              axios.post('action.php', {
+                  action: 'updateuser',
+                  nameuser: app.nameuser,
+                  addressuser: app.addressuser,
+                  phoneuser: app.phoneuser,
+                  idprefix: app.idprefix,
+                  idsex: app.idsex,
+                  idposition: app.idposition,
+                  hiddenId: app.hiddenId
+              }).then(res => {
+                  app.myModal = false;
+                  app.fetchRegister();
 
-        }).then(res => {
-            app.name = res.data.name;
-            app.description = res.data.description;
-            app.price = res.data.price;
-            app.category_id = res.data.category_id;
-            app.created = res.data.created;
-            
-            app.hiddenId = res.data.id;
-            app.myModal = true;
-            app.actionButton = 'Update';
-            app.dyynamicTitle = 'Edit Data';
-        });
-    },
+                  app.nameuser = '';
+                  app.addressuser = '';
+                  app.phoneuser = '';
+                  app.idprefix = '';
+                  app.idsex = '';
+                  app.idposition = '';
+
+                  app.hiddenId = '';
+                  alert(res.data.message);
+                  window.location.reload();
+              })
+          }
+        }
+      },
     deleteData(idsentaddmin) {
         if (confirm("Are you Sure ?")) {
             axios.post('action.php', {
@@ -93,6 +78,8 @@ let app = new Vue({
             });
         }
     },
+
+    
     fetchRegister() {
         axios.post('action.php', {
             action: 'fetchregister'
@@ -101,18 +88,18 @@ let app = new Vue({
             console.log("fetchregis");
         })
     },
-    edituserDataUser(iduser) {
+    fetchuserDataUser(iduser) {
         axios.post('action.php', {
             iduser: iduser,
-            action: 'editUser'
+            action: 'fetchUser'
 
         }).then(res => {
             app.nameuser = res.data.nameuser;
-            app.nameprefix = res.data.nameprefix;
+            app.idprefix = res.data.idprefix;
             app.addressuser = res.data.addressuser;
             app.phoneuser = res.data.phoneuser;
-            app.namesex = res.data.namesex;
-            app.namepossition = res.data.namepossition;
+            app.idsex = res.data.idsex;
+            app.idposition = res.data.idposition;
             
             app.hiddenId = res.data.iduser;
             app.myModal = true;

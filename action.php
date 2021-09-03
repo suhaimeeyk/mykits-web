@@ -62,7 +62,7 @@
         echo json_encode($data);
     }
 
-    if ($receiced_data->action == 'editUser') {
+    if ($receiced_data->action == 'fetchUser') {
         $query = "SELECT * FROM dbuser WHERE iduser = '".$receiced_data->iduser."' " ;
         $statement = $connect->prepare($query);
         $statement -> execute();
@@ -73,11 +73,32 @@
             $data['nameuser'] = $row['nameuser'];
             $data['addressuser'] = $row['addressuser'];
             $data['phoneuser'] = $row['phoneuser'];
-            $data['nameprefix'] = $row['nameprefix'];
-            $data['namesex'] = $row['namesex'];
-            $data['namepossition'] = $row['namepossition'];
+            $data['idprefix'] = $row['idprefix'];
+            $data['idsex'] = $row['idsex'];
+            $data['idposition'] = $row['idposition'];
         }
         echo json_encode($data);
+    }
+
+    if($receiced_data->action == 'updateuser') {
+        $data = array(
+            ':nameuser' => $receiced_data->nameuser,
+            ':addressuser' => $receiced_data->addressuser,
+            ':phoneuser' => $receiced_data->phoneuser,
+            ':idsex' => $receiced_data->idsex,
+            ':idposition' => $receiced_data->idposition,
+            ':iduser' => $receiced_data->hiddenId,
+        );
+
+        $query = "UPDATE dbuser SET nameuser = :nameuser, addressuser = :addressuser,
+                  phoneuser = :phoneuser, idsex = :idsex, idposition = :idposition WHERE iduser = :iduser ";
+
+        $statement = $connect->prepare($query);
+        $statement -> execute($data);
+        $output = array(
+            'message' => 'Data updated'
+        );
+        echo json_encode($output);
     }
 
     if ($receiced_data->action =='deleteUser') {
