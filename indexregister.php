@@ -148,12 +148,11 @@
         <!-- <div class="icon-box"> -->
         <br>
         <h3 class="text-center" data-aos="fade-up">รายชื่อผู้สมัครสมาชิก</h3>
-        <div style='overflow-x:auto'>
-            <div class="container" data-aos="fade-up">
+        <div style='overflow-x:auto'></div>
+            <div class="container"  data-aos="fade-up">
                 <div class="wrap-table100">
-
                     <div class="table100 ver1 " style='overflow-x:auto'>
-                        <div id="app" v-cloak>
+                        <div id="app" class="wrap-table100" v-cloak>
                             <table data-vertable="ver1">
                                 <thead>
                                     <tr class="row100 head">
@@ -221,7 +220,7 @@
                                         <td class="column100 column8" data-column="column8">
                                             <h6 class="text-center">
                                                 <button type="button" name="edituser"
-                                                    class="btn btn-success btn-xs delete" data-bs-toggle="modal"
+                                                    class="btn btn-success btn-xs edituser" data-bs-toggle="modal"
                                                     data-bs-target="#myModal" @click="fetchuserDataUser(user.iduser)">
                                                     Edit
                                                 </button>
@@ -244,6 +243,11 @@
                             <div v-if="myModal" class="modal fade" id="myModal" tabindex="-1">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">{{ dyynamicTitle }}</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close" @click="myModal=false"></button>
+                                        </div>
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label for="idprefix">idprefix</label>
@@ -363,6 +367,15 @@
         </div>
     </footer><!-- End Footer -->
 
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -390,14 +403,7 @@
     <script src="assets/vendor/purecounter/purecounter.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+    <!-- sadsa -->
 </body>
 
 </html>
