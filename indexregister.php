@@ -237,17 +237,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-
-
-
-
-
-
-
-
-
                         </div>
-
                     </div>
         </section><!-- End Services Section -->
 
