@@ -148,7 +148,7 @@
         <!-- <div class="icon-box"> -->
         <br>
         <h3 class="text-center" data-aos="fade-up">รายชื่อผู้สมัครสมาชิก</h3>
-        <div style='overflow-x:auto'></div>
+        <div style='overflow-x:auto'>
             <div class="container"  data-aos="fade-up">
                 <div class="wrap-table100">
                     <div class="table100 ver1 " style='overflow-x:auto'>

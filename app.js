@@ -16,6 +16,14 @@ let app = new Vue({
               app.allData = res.data;
           })
       },
+      fetchRegister() {
+        axios.post('action.php', {
+            action: 'fetchregister'
+        }).then(res => {
+            app.register = res.data;
+            console.log("fetchregis");
+        })
+    },
       openModal() {
           app.namesentaddmin = '';
           app.actionButton = 'SENT';
@@ -77,16 +85,6 @@ let app = new Vue({
                 alert(res.data.massage);
             });
         }
-    },
-
-    
-    fetchRegister() {
-        axios.post('action.php', {
-            action: 'fetchregister'
-        }).then(res => {
-            app.register = res.data;
-            console.log("fetchregis");
-        })
     },
     fetchuserDataUser(iduser) {
         axios.post('action.php', {
