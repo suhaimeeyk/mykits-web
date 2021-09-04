@@ -121,38 +121,39 @@
     </header><!-- End Header -->
 
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-        <div class="container" data-aos="fade-up">
+    <div id="app" class="wrap-table100" v-cloak>
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container" data-aos="fade-up">
 
-            <br><br>
-            <div class="section-title">
-                <h2>ตารางรายชื่อผู้ลงทะเบียน</h2>
-                <p>List user</p>
-            </div>
-        </div>
-        <!-- ======= Cta Section ======= -->
-        <section id="cta" class="cta">
-            <div class="container" data-aos="zoom-in">
-
-                <div class="text-center">
-                    <h3>ตารางรายชื่อผู้ลงทะเบียน</h3>
-                    <p> เมื่อคุณต้องการใช้งานระบบ กรุณาทำการลงทะเบียนระบบก่อนใช้งาน.</p>
-                    <a class="cta-btn" href="registermykits.php">ลงทะเบียน</a>
+                <br><br>
+                <div class="section-title">
+                    <h2>ตารางรายชื่อผู้ลงทะเบียน</h2>
+                    <p>List user</p>
                 </div>
-
             </div>
-        </section><!-- End Cta Section -->
+            <!-- ======= Cta Section ======= -->
+            <section id="cta" class="cta">
+                <div class="container" data-aos="zoom-in">
 
-        <!-- <P ALIGN=CENTER><img src="assets/img/register1.png"></P> -->
-        <!-- <div class="icon-box"> -->
-        <br>
-        <h3 class="text-center" data-aos="fade-up">รายชื่อผู้สมัครสมาชิก</h3>
-        <div style='overflow-x:auto'>
-            <div class="container"  data-aos="fade-up">
-                <div class="wrap-table100">
-                    <div class="table100 ver1 " style='overflow-x:auto'>
-                        <div id="app" class="wrap-table100" v-cloak>
+                    <div class="text-center">
+                        <h3>ตารางรายชื่อผู้ลงทะเบียน</h3>
+                        <p> เมื่อคุณต้องการใช้งานระบบ กรุณาทำการลงทะเบียนระบบก่อนใช้งาน.</p>
+                        <a class="cta-btn" href="registermykits.php">ลงทะเบียน</a>
+                    </div>
+
+                </div>
+            </section><!-- End Cta Section -->
+
+            <!-- <P ALIGN=CENTER><img src="assets/img/register1.png"></P> -->
+            <!-- <div class="icon-box"> -->
+            <br>
+            <h3 class="text-center" data-aos="fade-up">รายชื่อผู้สมัครสมาชิก</h3>
+            <div style='overflow-x:auto'>
+                <div class="container" data-aos="fade-up">
+                    <div class="wrap-table100">
+                        <div class="table100 ver1 " style='overflow-x:auto'>
+
                             <table data-vertable="ver1">
                                 <thead>
                                     <tr class="row100 head">
@@ -240,60 +241,62 @@
                             </table>
 
 
-                            <div v-if="myModal" class="modal fade" id="myModal" tabindex="-1">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">{{ dyynamicTitle }}</h4>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close" @click="myModal=false"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label for="idprefix">idprefix</label>
-                                                <input type="text" class="form-control" v-model="idprefix">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="nameuser">nameuser</label>
-                                                <input type="text" class="form-control" v-model="nameuser">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="addressuser">addressuser</label>
-                                                <input type="text" class="form-control" v-model="addressuser">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="phoneuser">phoneuser</label>
-                                                <input type="text" class="form-control" v-model="phoneuser">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="idsex">idsex</label>
-                                                <input type="text" class="form-control" v-model="idsex">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="idposition">idposition</label>
-                                                <input class="form-control" type="date" v-model="idposition">
-                                            </div>
-                                            <br>
-                                            <div class="modal-footer">
-                                                <input type="hidden" v-model="hiddenId">
-                                                <input type="button" v-model="actionButton" @click="submitData"
-                                                    class="btn btn-success btn-xs">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+
 
 
 
 
 
                         </div>
+
                     </div>
+        </section><!-- End Services Section -->
 
+        <div v-if="myModal" class="modal fade" id="myModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">{{ dyynamicTitle }}</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            @click="myModal=false"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="idprefix">idprefix</label>
+                            <input type="text" class="form-control" v-model="idprefix">
+                        </div>
+                        <div class="form-group">
+                            <label for="nameuser">nameuser</label>
+                            <input type="text" class="form-control" v-model="nameuser">
+                        </div>
+                        <div class="form-group">
+                            <label for="addressuser">addressuser</label>
+                            <input type="text" class="form-control" v-model="addressuser">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneuser">phoneuser</label>
+                            <input type="text" class="form-control" v-model="phoneuser">
+                        </div>
+                        <div class="form-group">
+                            <label for="idsex">idsex</label>
+                            <input type="text" class="form-control" v-model="idsex">
+                        </div>
+                        <div class="form-group">
+                            <label for="idposition">idposition</label>
+                            <input class="form-control" type="text" v-model="idposition">
+                        </div>
+                        <br>
+                        <div class="modal-footer">
+                            <input type="hidden" v-model="hiddenId">
+                            <input type="button" v-model="actionButton" @click="submitData"
+                                class="btn btn-success btn-xs">
+                        </div>
+                    </div>
                 </div>
-    </section><!-- End Services Section -->
-
+            </div>
+        </div>
+    </div>
 
     <!-- <div><img src="assets/img/inreback.jpg"></div> -->
     <!-- ======= Footer ======= -->

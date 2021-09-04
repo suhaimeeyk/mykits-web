@@ -82,6 +82,7 @@
 
     if($receiced_data->action == 'updateuser') {
         $data = array(
+            ':idprefix' => $receiced_data->idprefix,
             ':nameuser' => $receiced_data->nameuser,
             ':addressuser' => $receiced_data->addressuser,
             ':phoneuser' => $receiced_data->phoneuser,
@@ -90,7 +91,7 @@
             ':iduser' => $receiced_data->hiddenId,
         );
 
-        $query = "UPDATE dbuser SET nameuser = :nameuser, addressuser = :addressuser,
+        $query = "UPDATE dbuser SET idprefix = :idprefix,nameuser = :nameuser, addressuser = :addressuser,
                   phoneuser = :phoneuser, idsex = :idsex, idposition = :idposition WHERE iduser = :iduser ";
 
         $statement = $connect->prepare($query);

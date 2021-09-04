@@ -45,36 +45,38 @@ let app = new Vue({
                   });
               }
           }
-          if (app.nameuser != '' && app.idprefix != '' && app.addressuser != '' && app.phoneuser != '' &&
-          app.idsex != ''  && app.idposition != '') {
-            if (app.actionButton == 'Updateuser') {
-              axios.post('action.php', {
-                  action: 'updateuser',
-                  nameuser: app.nameuser,
-                  addressuser: app.addressuser,
-                  phoneuser: app.phoneuser,
-                  idprefix: app.idprefix,
-                  idsex: app.idsex,
-                  idposition: app.idposition,
-                  hiddenId: app.hiddenId
-              }).then(res => {
-                  app.myModal = false;
-                  app.fetchRegister();
-
-                  app.nameuser = '';
-                  app.addressuser = '';
-                  app.phoneuser = '';
-                  app.idprefix = '';
-                  app.idsex = '';
-                  app.idposition = '';
-
-                  app.hiddenId = '';
-                  alert(res.data.message);
-                  window.location.reload();
-              })
-          }
-        }
       },
+      submitDataUser() {
+        if (app.nameuser != '' && app.idprefix != '' && app.addressuser != '' && app.phoneuser != '' &&
+        app.idsex != ''  && app.idposition != '') {
+          if (app.actionButton == 'Updateuser') {
+            axios.post('action.php', {
+                action: 'updateuser',
+                nameuser: app.nameuser,
+                addressuser: app.addressuser,
+                phoneuser: app.phoneuser,
+                idprefix: app.idprefix,
+                idsex: app.idsex,
+                idposition: app.idposition,
+                hiddenId: app.hiddenId
+            }).then(res => {
+                app.myModal = false;
+                app.fetchRegister();
+
+                app.nameuser = '';
+                app.addressuser = '';
+                app.phoneuser = '';
+                app.idprefix = '';
+                app.idsex = '';
+                app.idposition = '';
+
+                app.hiddenId = '';
+                alert(res.data.message);
+                window.location.reload();
+            })
+        }
+      }
+    },
     deleteData(idsentaddmin) {
         if (confirm("Are you Sure ?")) {
             axios.post('action.php', {

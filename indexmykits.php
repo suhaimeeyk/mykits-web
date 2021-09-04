@@ -247,7 +247,7 @@
                                         <br>
                                         <div class="modal-footer">
                                             <input type="hidden" v-model="hiddenId">
-                                            <input type="button" v-model="actionButton" @click="submitData"
+                                            <input type="button" v-model="actionButton" @click="submitDataUser"
                                                 class="btn btn-success btn-xs">
                                         </div>
                                     </div>
