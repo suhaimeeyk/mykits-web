@@ -21,7 +21,7 @@ let app = new Vue({
             action: 'fetchregister'
         }).then(res => {
             app.register = res.data;
-            console.log("fetchregis");
+            // console.log("fetchregis");
         })
     },
       openModal() {
@@ -47,35 +47,59 @@ let app = new Vue({
           }
       },
       submitDataUser() {
-        if (app.nameuser != '' && app.idprefix != '' && app.addressuser != '' && app.phoneuser != '' &&
+        if (app.idprefix != '' && app.nameuser != '' && app.addressuser != '' && app.phoneuser != '' &&
         app.idsex != ''  && app.idposition != '') {
-          if (app.actionButton == 'Updateuser') {
-            axios.post('action.php', {
-                action: 'updateuser',
-                nameuser: app.nameuser,
-                addressuser: app.addressuser,
-                phoneuser: app.phoneuser,
-                idprefix: app.idprefix,
-                idsex: app.idsex,
-                idposition: app.idposition,
-                hiddenId: app.hiddenId
-            }).then(res => {
-                app.myModal = false;
-                app.fetchRegister();
+                    if (app.actionButton == 'InsertUser') {
+                        axios.post('action.php', {
+                            action: 'insertuser',
+                            idprefix: app.idprefix,
+                            nameuser: app.nameuser,
+                            addressuser: app.addressuser,
+                            phoneuser: app.phoneuser,
+                            idsex: app.idsex,
+                            idposition: app.idposition,
+                        }).then(res => {
+                            app.myModal = false;
+                            app.fetchRegister();
 
-                app.nameuser = '';
-                app.addressuser = '';
-                app.phoneuser = '';
-                app.idprefix = '';
-                app.idsex = '';
-                app.idposition = '';
+                            app.idprefix = '';
+                            app.nameuser = '';
+                            app.addressuser = '';
+                            app.phoneuser = '';
+                            app.idsex = '';
+                            app.idposition = '';
 
-                app.hiddenId = '';
-                alert(res.data.message);
-                window.location.reload();
-            })
-        }
-      }
+                            alert(res.data.message);
+                            window.location.reload();
+                        });
+                    }
+                      if (app.actionButton == 'Update') {
+                        axios.post('action.php', {
+                            action: 'updateuser',
+                            idprefix: app.idprefix,
+                            nameuser: app.nameuser,
+                            addressuser: app.addressuser,
+                            phoneuser: app.phoneuser,
+                            idsex: app.idsex,
+                            idposition: app.idposition,
+                            hiddenId: app.hiddenId
+                        }).then(res => {
+                            app.myModal = false;
+                            app.fetchRegister();
+            
+                            app.idprefix = '';
+                            app.nameuser = '';
+                            app.addressuser = '';
+                            app.phoneuser = '';
+                            app.idsex = '';
+                            app.idposition = '';
+            
+                            app.hiddenId = '';
+                            alert(res.data.message);
+                            window.location.reload();
+                        })
+                    }
+                }
     },
     deleteData(idsentaddmin) {
         if (confirm("Are you Sure ?")) {
@@ -94,8 +118,8 @@ let app = new Vue({
             action: 'fetchUser'
 
         }).then(res => {
-            app.nameuser = res.data.nameuser;
             app.idprefix = res.data.idprefix;
+            app.nameuser = res.data.nameuser;
             app.addressuser = res.data.addressuser;
             app.phoneuser = res.data.phoneuser;
             app.idsex = res.data.idsex;

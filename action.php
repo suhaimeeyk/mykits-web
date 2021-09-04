@@ -61,6 +61,27 @@
         }
         echo json_encode($data);
     }
+    if ($receiced_data->action == 'insertuser') {
+        $data = array(
+            ':idprefix' => $receiced_data->idprefix,
+            ':nameuser' => $receiced_data->nameuser,
+            ':addressuser' => $receiced_data->addressuser,
+            ':phoneuser' => $receiced_data->phoneuser,
+            ':idsex' => $receiced_data-> idsex,
+            ':idposition' => $receiced_data-> idposition,
+        );
+
+        $query = " INSERT INTO dbuser(idprefix, nameuser, addressuser , phoneuser , idsex , idposition)
+                    VALUES (:idprefix, :nameuser ,:addressuser , :phoneuser , :idsex , :idposition)";
+        
+        $statement = $connect->prepare($query);
+        $statement -> execute($data);
+        $output = array(
+            'message' => 'Data Inserted'
+        );
+        
+        echo json_encode($output);
+    }
 
     if ($receiced_data->action == 'fetchUser') {
         $query = "SELECT * FROM dbuser WHERE iduser = '".$receiced_data->iduser."' " ;

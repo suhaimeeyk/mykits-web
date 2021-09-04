@@ -75,7 +75,6 @@
 <!-- <body background="assets/img/back1.png"> -->
 
 <body>
-
     <!-- ======= Hero Section ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
@@ -120,33 +119,32 @@
         </div>
     </header><!-- End Header -->
 
+    <br><br><br>
+    <div class="container" data-aos="fade-up">
+        <br><br>
+        <div class="section-title">
+            <h2>ตารางรายชื่อผู้ลงทะเบียน</h2>
+            <p>List user</p>
+        </div>
+    </div>
 
-    <div id="app" class="wrap-table100" v-cloak>
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services">
-            <div class="container" data-aos="fade-up">
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
 
-                <br><br>
-                <div class="section-title">
-                    <h2>ตารางรายชื่อผู้ลงทะเบียน</h2>
-                    <p>List user</p>
-                </div>
+            <div class="text-center">
+                <h3>ตารางรายชื่อผู้ลงทะเบียน</h3>
+                <p> เมื่อคุณต้องการใช้งานระบบ กรุณาทำการลงทะเบียนระบบก่อนใช้งาน.</p>
+                <a class="cta-btn" href="registermykits.php">ลงทะเบียน</a>
             </div>
-            <!-- ======= Cta Section ======= -->
-            <section id="cta" class="cta">
-                <div class="container" data-aos="zoom-in">
 
-                    <div class="text-center">
-                        <h3>ตารางรายชื่อผู้ลงทะเบียน</h3>
-                        <p> เมื่อคุณต้องการใช้งานระบบ กรุณาทำการลงทะเบียนระบบก่อนใช้งาน.</p>
-                        <a class="cta-btn" href="registermykits.php">ลงทะเบียน</a>
-                    </div>
+        </div>
+    </section><!-- End Cta Section -->
 
-                </div>
-            </section><!-- End Cta Section -->
 
-            <!-- <P ALIGN=CENTER><img src="assets/img/register1.png"></P> -->
-            <!-- <div class="icon-box"> -->
+    <div id="app" class="center" v-cloak>
+        
+        <section id="services" class="services">
             <br>
             <h3 class="text-center" data-aos="fade-up">รายชื่อผู้สมัครสมาชิก</h3>
             <div style='overflow-x:auto'>
@@ -289,7 +287,7 @@
                         <br>
                         <div class="modal-footer">
                             <input type="hidden" v-model="hiddenId">
-                            <input type="button" v-model="actionButton" @click="submitData"
+                            <input type="button" v-model="actionButton" @click="submitDataUser"
                                 class="btn btn-success btn-xs">
                         </div>
                     </div>
