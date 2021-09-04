@@ -251,28 +251,40 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="idprefix">idprefix</label>
-                            <input type="text" class="form-control" v-model="idprefix">
+                            <label for="idprefix">คำนำหน้า </label>
+                            <select name="idprefix" class="form-control" v-model="idprefix" >
+                                    <option value="">คำนำหน้า</option>
+                                    <option value="1">นาย</option>
+                                    <option value="2">นางสาว</option>
+                                    <option value="3">นาง</option>
+                                </select>
                         </div>
                         <div class="form-group">
-                            <label for="nameuser">nameuser</label>
+                            <label for="nameuser">ชื่อและนามสกุล</label>
                             <input type="text" class="form-control" v-model="nameuser">
                         </div>
                         <div class="form-group">
-                            <label for="addressuser">addressuser</label>
+                            <label for="addressuser">ที่อยู่</label>
                             <input type="text" class="form-control" v-model="addressuser">
                         </div>
                         <div class="form-group">
-                            <label for="phoneuser">phoneuser</label>
+                            <label for="phoneuser">เบอร์โทร</label>
                             <input type="text" class="form-control" v-model="phoneuser">
                         </div>
                         <div class="form-group">
-                            <label for="idsex">idsex</label>
-                            <input type="text" class="form-control" v-model="idsex">
+                            <label for="idsex">เพศ</label>
+                            <select name="idsex" class="form-control" v-model="idsex" >
+                                    <option value="">เพศ</option>
+                                    <option value="1">ชาย</option>
+                                    <option value="2">หญิง</option>
+                                </select>
                         </div>
-                        <div class="form-group">
-                            <label for="idposition">idposition</label>
-                            <input class="form-control" type="text" v-model="idposition">
+                        <div class="form-group" >
+                                <label for="idposition">สถานะ</label>
+                                <select name="idposition" class="form-control" v-model="idposition" >
+                                    <option value="1">ผู้ใช้</option>
+                                    <option value="2">ผู้ดูแล</option>
+                                </select>
                         </div>
                         <br>
                         <div class="modal-footer">
@@ -358,8 +370,6 @@
         </div>
     </footer><!-- End Footer -->
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
