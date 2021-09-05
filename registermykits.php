@@ -199,6 +199,7 @@
                             <div class="mb-3">
                                 <label for="idposition">สถานะ</label>
                                 <select name="idposition" class="form-control" id="idposition" required>
+                                    <option value="">สถานะ</option>
                                     <option value="1">ผู้ใช้</option>
                                 </select>
                             </div>

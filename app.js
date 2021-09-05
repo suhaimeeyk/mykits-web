@@ -6,7 +6,9 @@ let app = new Vue({
       myModal: false,
       hiddenId: null,
       actionButton: 'SENT',
-      dyynamicTitle: 'Add data'
+
+      actionButtonUser: 'INSERT ',
+      dyynamicTitle: 'ADD REGISTER'
   },
   methods: {
       fetchAllData() {
@@ -23,13 +25,25 @@ let app = new Vue({
             app.register = res.data;
             // console.log("fetchregis");
         })
-    },
+      },
       openModal() {
           app.namesentaddmin = '';
           app.actionButton = 'SENT';
           app.dyynamicTitle = 'Reques';
           app.myModal = true;
       },
+      openModalUser() {
+        app.idprefix = '';
+        app.nameuser = '';
+        app.addressuser = '';
+        app.phoneuser = '';
+        app.idsex = '';
+        app.idposition = '';
+
+        app.actionButton = 'INSERTs';
+        app.dyynamicTitle = 'Add Data';
+        app.myModal = true;
+    },
       submitData() {
           if (app.namesentaddmin != '' ) {
               if (app.actionButton == 'SENT') {
@@ -49,7 +63,7 @@ let app = new Vue({
       submitDataUser() {
         if (app.idprefix != '' && app.nameuser != '' && app.addressuser != '' && app.phoneuser != '' &&
         app.idsex != ''  && app.idposition != '') {
-                    if (app.actionButton == 'InsertUser') {
+                    if (app.actionButton == 'INSERT') {
                         axios.post('action.php', {
                             action: 'insertuser',
                             idprefix: app.idprefix,

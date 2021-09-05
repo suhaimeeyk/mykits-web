@@ -185,7 +185,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="assets/img/product/Vector Smart Object-4.png" class="img-fluid" alt="">
+                    <img src="assets/img/product/Vector Smart Object-9.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
                             <a href="design.php">
@@ -193,8 +193,8 @@
                             </a>
                         </div>
                         <h4>Limited 002</h4>
-                        <p>ลายเสื้อทีมฟุตบอลรุ่น Limited ของ RUAMPEUAN FC</p>
-                        <a href="assets/img/product/Vector Smart Object-4.png" data-gallery="portfolioGallery"
+                        <p>ลายเสื้อทีมฟุตบอลรุ่น Limited ของทีม Argentina</p>
+                        <a href="assets/img/product/Vector Smart Object-9.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
                         <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -287,17 +287,17 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                    <img src="assets/img/product/Vector Smart Object-4.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
                             <a href="design.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>
-                        <h4>Web 3</h4>
-                        <p>Web</p>
-                        <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                            class="portfolio-lightbox preview-link" ><i class="bx bx-plus"></i></a>
+                        <h4>Art Design 003</h4>
+                        <p>ลายเสื้อทีมฟุตบอลรุ่น Limited ของ RUAMPEUAN FC</p>
+                        <a href="assets/img/product/Vector Smart Object-4.png" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
                         <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
                     </div>

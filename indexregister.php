@@ -143,7 +143,7 @@
 
 
     <div id="app" class="center" v-cloak>
-        
+
         <section id="services" class="services">
             <br>
             <h3 class="text-center" data-aos="fade-up">รายชื่อผู้สมัครสมาชิก</h3>
@@ -252,12 +252,12 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="idprefix">คำนำหน้า </label>
-                            <select name="idprefix" class="form-control" v-model="idprefix" >
-                                    <option value="">คำนำหน้า</option>
-                                    <option value="1">นาย</option>
-                                    <option value="2">นางสาว</option>
-                                    <option value="3">นาง</option>
-                                </select>
+                            <select name="idprefix" class="form-control" v-model="idprefix">
+                                <option value="">คำนำหน้า</option>
+                                <option value="1">นาย</option>
+                                <option value="2">นางสาว</option>
+                                <option value="3">นาง</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="nameuser">ชื่อและนามสกุล</label>
@@ -273,18 +273,18 @@
                         </div>
                         <div class="form-group">
                             <label for="idsex">เพศ</label>
-                            <select name="idsex" class="form-control" v-model="idsex" >
-                                    <option value="">เพศ</option>
-                                    <option value="1">ชาย</option>
-                                    <option value="2">หญิง</option>
-                                </select>
+                            <select name="idsex" class="form-control" v-model="idsex">
+                                <option value="">เพศ</option>
+                                <option value="1">ชาย</option>
+                                <option value="2">หญิง</option>
+                            </select>
                         </div>
-                        <div class="form-group" >
-                                <label for="idposition">สถานะ</label>
-                                <select name="idposition" class="form-control" v-model="idposition" >
-                                    <option value="1">ผู้ใช้</option>
-                                    <option value="2">ผู้ดูแล</option>
-                                </select>
+                        <div class="form-group">
+                            <label for="idposition">สถานะ</label>
+                            <select name="idposition" class="form-control" v-model="idposition">
+                                <option value="1">ผู้ใช้</option>
+                                <option value="2">ผู้ดูแล</option>
+                            </select>
                         </div>
                         <br>
                         <div class="modal-footer">
@@ -296,6 +296,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- <div><img src="assets/img/inreback.jpg"></div> -->

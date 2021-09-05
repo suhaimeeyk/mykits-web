@@ -1,3 +1,23 @@
+<?php
+  include_once('functions.php');
+  $insertdata = new db_con();
+  if(isset($_POST['sentaddmin'])){
+    $namesentaddmin = $_POST['namesentaddmin'];
+
+    $sql = $insertdata->insertsentaddmin($namesentaddmin);
+
+    if($sql){
+        echo "<script>alert('Record Inserted Successfully !!');</script>";
+        echo "<script>window.location.href='sentaddmin.php'</script>";
+    } else{
+        echo "<script>alert('Something went wrong !!');</script>";
+        echo "<script>window.location.href='sentaddmin.php'</script>";
+    }
+  }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
