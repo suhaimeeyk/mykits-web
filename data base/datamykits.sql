@@ -1,9 +1,11 @@
 CREATE DATABASE IF NOT EXISTS expmykits CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*---------dbprefix-----------*/
 CREATE TABLE IF NOT EXISTS dbprefix(
+
  	idprefix INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idprefix PRIMARY KEY (idprefix),
     nameprefix char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+    
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*--------dbsex-----------*/
 CREATE TABLE IF NOT EXISTS dbsex(
