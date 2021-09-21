@@ -55,11 +55,66 @@ if (!$_SESSION["idlogin"]){
         display: none;
     }
     </style>
+    
+    
+    
+
 </head>
 
 <body>
+    <div class="loader-bg">
 
-<?php include('include/header.php');?>
+    </div>
+    <div class="loader">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="spinner-layer spinner-spinner-teal lighten-1">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php include('include/header.php');?>
 
     <!-- ======= Hero Section ======= -->
     <section id="hero">
@@ -241,7 +296,7 @@ if (!$_SESSION["idlogin"]){
         </div>
     </footer><!-- End Footer -->
 
-   
+
     <!-- Axios and vue.js-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -260,7 +315,7 @@ if (!$_SESSION["idlogin"]){
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
-    
+
 
     <!-- <script>
         let app = new Vue({

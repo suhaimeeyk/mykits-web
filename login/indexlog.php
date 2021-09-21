@@ -7,13 +7,14 @@ include('h.php');
 }
 </style>
 
+
 <body class="indexbody">
 
 <!-- <body> -->
     <br> <br> <br> <br> <br> <br> <br>
     <div class="container">
         <div class="col-lg-12 col-md-6">
-            <form name=" formlogin" action="checklogin.php" method="POST" id="login" class="form-horizontal">
+            <form bgcolor="#FFE5BB" name=" formlogin" action="checklogin.php" method="POST" id="login" class="form-horizontal">
 
                     <div class="imgcontainer">
                         <img src="logo.png">
