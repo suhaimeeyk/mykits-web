@@ -8,20 +8,21 @@ include('h.php');
 </style>
 
 <!-- <body class="indexboy"> -->
+
 <body background="noclass4.png">
     <!-- <body> -->
     <br> <br> <br> <br> <br> <br> <br>
-    
+
     <div class="container">
-        
+
         <div class="form">
             <div class="col-lg-12 col-md-6">
-                
+
                 <form name=" formlogin" action="checklogin.php" method="POST" id="login" class="form-horizontal">
-                <br>
-                <div class="brand-logo"></div>
-                <div class="brand-title">Welcome to Website</div>
-                <br>
+                    <br>
+                    <div class="brand-logo"></div>
+                    <div class="brand-title">Welcome to Website</div>
+                    <br>
                     <div class="form-group">
                         <div class="col-sm-12">
                             <input type="text" name="username" placeholder="Username" required placeholder="Username" />
@@ -38,14 +39,16 @@ include('h.php');
                         <div class="col-sm-12">
                             <button type="submit" class="btn btn-success" id="btn">
                                 <span class="glyphicon glyphicon-log-in"> </span>
-                                Login </button>
+                                Login
+                            </button>
+                           
                         </div>
                     </div>
                 </form>
             </div>
             <a href="insertlogin.php" class="btn btn-warning">สมัครสมาชิก</a>
         </div>
-        
+
     </div>
     <a href="insertlogin.php" class="btn btn-warning">สมัครสมาชิก</a> <a href="indexmykits.php"
         class="btn btn-primary">เข้าสู่หน้าเว็บไซต์</a>

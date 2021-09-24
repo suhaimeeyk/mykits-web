@@ -1,4 +1,8 @@
-<?php session_start();?>
+<?php session_start();
+include('conddb.php');
+$name = $_SESSION['name'];
+?>
+
 <?php 
  
 if (!$_SESSION["idlogin"]){

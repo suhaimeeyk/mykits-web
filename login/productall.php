@@ -122,8 +122,7 @@
                         <p>ลายเสื้อรุ่น Limited ไม่เหมือนใครของมหาวิทยาลัยฟาฏอนี</p>
                         <a href="../assets/img/product/Vector Smart Object-3.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+
                     </div>
                 </div>
 
@@ -139,8 +138,7 @@
                         <p>Art Design 001 E-SPORT</p>
                         <a href="../assets/img/product/Vector Smart Object-8.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+
                     </div>
                 </div>
 
@@ -156,8 +154,7 @@
                         <p>ลายเสื้อทีมฟุตบอลรุ่น Limited ของทีม Argentina</p>
                         <a href="../assets/img/product/Vector Smart Object-9.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+
                     </div>
                 </div>
 
@@ -173,8 +170,7 @@
                         <p>เสื้อ Liverpool BY MYKITS</p>
                         <a href="../assets/img/product/Vector Smart Object-7.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+
                     </div>
                 </div>
 
@@ -190,8 +186,7 @@
                         <p>เสื้อ Liverpool BY MYKITS</p>
                         <a href="../assets/img/product/Vector Smart Object-2.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+
                     </div>
                 </div>
 
@@ -207,8 +202,7 @@
                         <p>เสื้อ Aresanal BY MYKITS</p>
                         <a href="../assets/img/product/Vector Smart Object-6.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+  
                     </div>
                 </div>
 
@@ -224,8 +218,7 @@
                         <p>เสื้อ Manchester BY MYKITS</p>
                         <a href="../assets/img/product/Vector Smart Object.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+
                     </div>
                 </div>
 
@@ -241,8 +234,7 @@
                         <p>เสื้อ Sper BY MYKITS</p>
                         <a href="../assets/img/product/Vector Smart Object-5.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+
                     </div>
                 </div>
 
@@ -258,8 +250,7 @@
                         <p>ลายเสื้อทีมฟุตบอลรุ่น Limited ของ RUAMPEUAN FC</p>
                         <a href="../assets/img/product/Vector Smart Object-4.png" data-gallery="portfolioGallery"
                             class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+
                     </div>
                 </div>
 

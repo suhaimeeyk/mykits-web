@@ -87,7 +87,11 @@
             return $deleterecord;
             }
 
-
-
+// login
+        public function insertlogin($username,$password,$level,$name){
+            $result = mysqli_query($this->dbcon,"INSERT INTO dblogin( username, password,level,name)
+            values('$username','$password','$level','$name' )");
+            return $result;
+        }
 
     }
