@@ -40,7 +40,9 @@
                   <srcript src="https://code.jquery.com/jquery-3.6.0.min.js"></srcript>
 
                   <li><a class="getstarted scrollto" onclick="return confirm('แน่ใจหรือไหมที่จะออกจากระบบ ?');"
-                          href="login/logout.php">LOGOUT | สวัสดีคุณแอดมิน (<?php echo $name; ?>)</a></li>
+                          href="login/logout.php">LOGOUT 
+                          <!-- | สวัสดีคุณแอดมิน (<?php echo $name; ?>) -->
+                        </a></li>
               </ul>
               <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
