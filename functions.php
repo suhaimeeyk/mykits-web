@@ -93,5 +93,46 @@
             values('$username','$password','$level','$name' )");
             return $result;
         }
+        
+
+        public function fetchdataloguse(){
+        $result = mysqli_query($this->dbcon,"SELECT l.ID, l.username , l.password , l.name , l.level
+                                            FROM dblogin as l
+                                            where l.ID IS NOT NULL ORDER BY l.ID
+                                                ");
+                                            return $result;
+        }
+
+        public function fetchdatalogusename(){
+        $result = mysqli_query($this->dbcon,"SELECT l.name 
+
+                                            FROM login as l
+                                        
+                                            where l.name  IS NOT NULL ORDER BY l.name 
+                                                ");
+                                            return $result;
+        }
+
+        public function fetchonerecordloguse($loguseid){
+        $result = mysqli_query($this->dbcon,"SELECT * FROM login WHERE ID = '$loguseid'");
+        return $result ;
+        }
+
+        public function updateloguse($ID,$username,$password,$name,$level,$loguseid) {
+        $result = mysqli_query($this->dbcon,"UPDATE login SET
+            ID ='$ID',
+            username ='$username',
+            password ='$password',
+            name ='$name' ,              
+            level ='$level'
+            WHERE ID = '$loguseid'
+        ");
+        return $result ;
+        }
+
+        public function deleteloguse($loguseid){
+        $deleterecord = mysqli_query($this->dbcon, "DELETE FROM login WHERE ID = '$loguseid'");
+        return $deleterecord;
+        }
 
     }

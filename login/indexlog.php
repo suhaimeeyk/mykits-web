@@ -41,16 +41,22 @@ include('h.php');
                                 <span class="glyphicon glyphicon-log-in"> </span>
                                 Login
                             </button>
-                           
+
+                            <button class="btn btn-warning" onclick="window.location.href='insertlogin.php';">
+                            สมัครสมาชิก
+                            </button>
+
+                            <!-- <button class="btn btn-primary" onclick="window.location.href='indexmykits.php';">
+                            เข้าสู่หน้าเว็บไซต์
+                            </button> -->
                         </div>
                     </div>
                 </form>
             </div>
-            <a href="insertlogin.php" class="btn btn-warning">สมัครสมาชิก</a>
+            <!-- <a href="insertlogin.php" class="btn btn-warning">สมัครสมาชิก</a> -->
         </div>
 
     </div>
-    <a href="insertlogin.php" class="btn btn-warning">สมัครสมาชิก</a> <a href="indexmykits.php"
-        class="btn btn-primary">เข้าสู่หน้าเว็บไซต์</a>
+    <a href="indexmykits.php" class="btn btn-primary">เข้าสู่หน้าเว็บไซต์</a>
 
 </body>
