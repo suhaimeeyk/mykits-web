@@ -135,5 +135,87 @@
         echo json_encode($output);
     }
 
+    //registerLogin
+    if ($receiced_data->action == "fetchregisterlogin") {
+        $query = "SELECT * FROM dblogin";
+
+        $statement = $connect->prepare($query);
+        $statement->execute();
+        while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+        echo json_encode($data);
+    }
+    if ($receiced_data->action == 'insertuserlogin') {
+        $data = array(
+            ':idlogin' => $receiced_data->idlogin,
+            ':username' => $receiced_data->username,
+            ':password' => $receiced_data->password,
+            ':name' => $receiced_data->name,
+            ':level' => $receiced_data-> level,
+        );
+
+        $query = " INSERT INTO dblogin(idlogin, username, password , name , level )
+                    VALUES (:idlogin, :username ,:password , :name , :level )";
+        
+        $statement = $connect->prepare($query);
+        $statement -> execute($data);
+        $output = array(
+            'message' => 'Data Inserted'
+        );
+        
+        echo json_encode($output);
+    }
+
+    if ($receiced_data->action == 'fetchUserlogin') {
+        $query = "SELECT * FROM dblogin WHERE idlogin = '".$receiced_data->idlogin."' " ;
+        $statement = $connect->prepare($query);
+        $statement -> execute();
+        $result = $statement->fetchAll();
+
+        foreach($result as $row) {
+            $data['idlogin'] = $row['idlogin'];
+            $data['username'] = $row['username'];
+            $data['password'] = $row['password'];
+            $data['name'] = $row['name'];
+            $data['level'] = $row['level'];
+        }
+        echo json_encode($data);
+    }
+
+    if($receiced_data->action == 'updateuserlogin') {
+        $data = array(
+            ':idlogin' => $receiced_data->idlogin,
+            ':username' => $receiced_data->username,
+            ':password' => $receiced_data->password,
+            ':name' => $receiced_data->name,
+            ':level' => $receiced_data->level,
+            ':idlogin' => $receiced_data->hiddenIdlogin,
+        );
+
+        $query = "UPDATE dblogin SET idlogin = :idlogin, username = :username, password = :password,
+                  name = :name, level = :level WHERE idlogin = :idlogin";
+
+        $statement = $connect->prepare($query);
+        $statement -> execute($data);
+        $output = array(
+            'message' => 'Data updated login'
+        );
+        echo json_encode($output);
+    }
+
+    if ($receiced_data->action =='deleteUserlogin') {
+        $query = "DELETE FROM dblogin WHERE idlogin = '".$receiced_data->idlogin."' ";
+
+        $statement = $connect->prepare($query);
+        $statement ->execute();
+
+        $output = array(
+            'message' => 'Delete data'
+        );
+        echo json_encode($output);
+    }
+
+
 
 ?>

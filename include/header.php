@@ -17,11 +17,11 @@
 
                   <li class="dropdown"><a href="#"><span><?php echo $name; ?></span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="./proflie/myprofile.php">ข้อมูลส่วนตัว</a></li>
+                            <!-- <li><a href="./proflie/myprofile.php">ข้อมูลส่วนตัว</a></li> -->
                             <li class="dropdown"><a href="#"><span>ข้อมูลล็อคอิน</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="#">ข้อมูลสมัครสสมาชิก</a></li>
+                                    <li><a href="registerlogin.php">ข้อมูลสมัครสสมาชิก</a></li>
                                 </ul>
                             </li>
                         </ul>

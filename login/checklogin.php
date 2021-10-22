@@ -89,12 +89,16 @@ include('h.php');
                                 <span class="glyphicon glyphicon-log-in"> </span>
                                 Login
                             </button>
+
+                            <button class="btn btn-warning" onclick="window.location.href='insertlogin.php';">
+                            สมัครสมาชิก
+                            </button>
                            
                         </div>
                     </div>
                 </form>
             </div>
-            <a href="insertlogin.php" class="btn btn-warning">สมัครสมาชิก</a>
+            <!-- <a href="insertlogin.php" class="btn btn-warning">สมัครสมาชิก</a> -->
         </div>
 
     </div>
