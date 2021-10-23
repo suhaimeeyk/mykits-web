@@ -9,7 +9,7 @@
           <nav id="navbar" class="navbar">
               <ul>
                   <li><a class="nav-link scrollto active" href="indexmykits.php">Home</a></li>
-                  <li><a class="nav-link scrollto" href="#services">Design</a></li>
+                  <li><a class="nav-link scrollto" href="design/designmykits.php">Design</a></li>
                   <li><a class="nav-link scrollto" href="productall.php">Product</a></li>
                   <li><a class="nav-link scrollto " href="about.php">About</a></li>
                   <li><a class="nav-link scrollto " href="indexregister.php">รายชื่อผู้ลงทะเบียน</a></li>

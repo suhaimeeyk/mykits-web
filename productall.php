@@ -127,7 +127,7 @@ if (!$_SESSION["idlogin"]){
                     <img src="assets/img/product/Vector Smart Object-3.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
-                            <a href="design.php">
+                            <a href="design/designmykits.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>
@@ -144,7 +144,7 @@ if (!$_SESSION["idlogin"]){
                     <img src="assets/img/product/Vector Smart Object-8.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
-                            <a href="design.php">
+                            <a href="design/designmykits.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>
@@ -161,7 +161,7 @@ if (!$_SESSION["idlogin"]){
                     <img src="assets/img/product/Vector Smart Object-9.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
-                            <a href="design.php">
+                            <a href="design/designmykits.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>
@@ -178,7 +178,7 @@ if (!$_SESSION["idlogin"]){
                     <img src="assets/img/product/Vector Smart Object-7.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
-                            <a href="design.php">
+                            <a href="design/designmykits.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>
@@ -195,7 +195,7 @@ if (!$_SESSION["idlogin"]){
                     <img src="assets/img/product/Vector Smart Object-2.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
-                            <a href="design.php">
+                            <a href="design/designmykits.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>
@@ -212,7 +212,7 @@ if (!$_SESSION["idlogin"]){
                     <img src="assets/img/product/Vector Smart Object-6.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
-                            <a href="design.php">
+                            <a href="design/designmykits.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>
@@ -229,7 +229,7 @@ if (!$_SESSION["idlogin"]){
                     <img src="assets/img/product/Vector Smart Object.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
-                            <a href="design.php">
+                            <a href="design/designmykits.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>
@@ -246,7 +246,7 @@ if (!$_SESSION["idlogin"]){
                     <img src="assets/img/product/Vector Smart Object-5.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
-                            <a href="design.php">
+                            <a href="design/designmykits.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>
@@ -263,7 +263,7 @@ if (!$_SESSION["idlogin"]){
                     <img src="assets/img/product/Vector Smart Object-4.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <div class="text-center">
-                            <a href="design.php">
+                            <a href="design/designmykits.php">
                                 <font color="ed502e">GET START CLICK</font>
                             </a>
                         </div>

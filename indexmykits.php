@@ -142,7 +142,7 @@ if (!$_SESSION["idlogin"]){
                                 "ชุดของฉัน" ที่เวลาสวมใส่ชุดๆนั้นแล้วจะรู้สึกเป็นเอกลักษณ์ของตัวเองที่ไม่เหมือนใคร.</p>
                             <a href="about.php"
                                 class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-                            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">START
+                            <a href="design/designmykits.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">START
                                 DESIGN</a>
                             <a href="productall.php"
                                 class="btn-get-started animate__animated animate__fadeInUp scrollto">PRODUCT</a>
@@ -161,7 +161,7 @@ if (!$_SESSION["idlogin"]){
                             </p>
                             <a href="about.php"
                                 class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-                            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">START
+                            <a href="design/designmykits.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">START
                                 DESIGN</a>
                             <a href="productall.php"
                                 class="btn-get-started animate__animated animate__fadeInUp scrollto">PRODUCT</a>
@@ -179,7 +179,7 @@ if (!$_SESSION["idlogin"]){
                             </p>
                             <a href="about.php"
                                 class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-                            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">START
+                            <a href="design/designmykits.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">START
                                 DESIGN</a>
                             <a href="productall.php"
                                 class="btn-get-started animate__animated animate__fadeInUp scrollto">PRODUCT</a>
