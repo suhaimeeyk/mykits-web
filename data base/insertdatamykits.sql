@@ -1,7 +1,7 @@
 /*---------Insert dbcolorshirt----------*/
-INSERT INTO dbcolorshirt VALUES (1,'ดำ'),(2,'ขาว');
+INSERT INTO dbcolorshirt VALUES (1,'ดำ'),(2,'ขาว'),(3,'ส้ม'),(4,'น้ำเงิน');
 /*---------Insert dbcategory----------*/
-INSERT INTO dbcategory VALUES (1,'ลวดลายเสื้อ'),(2,'ลวดลายเสื้อรุ่น Limited');
+INSERT INTO dbcategory VALUES (1,'SS'),(2,'S'),(3,'M'),(4,'L'),(5,'XL'),(6,'XXL');
 /*---------Insert dbprefix----------*/
 INSERT INTO dbprefix VALUES (1,'นาย'),(2,'นางสาว'),(3,'นาง');
 /*---------Insert dbsex----------*/

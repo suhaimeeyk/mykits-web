@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS dbfloorshirt(
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*-------------dbdesign-----------*/
 CREATE TABLE IF NOT EXISTS dbdesign(
- 	iddesign INT(4) NOT NULL,
+ 	iddesign INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_iddesign PRIMARY KEY (iddesign),
     namedesign VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     idcategory INT(4) NOT NULL,

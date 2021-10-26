@@ -135,4 +135,15 @@
         return $deleterecord;
         }
 
+// design
+
+        public function profiledesign($namedesign,$idcategory,$idbodyshirt,$idcovershirt,$idfloorshirt,$idproduct,$iduser,$idcolorshirt){
+            $result = mysqli_query($this->dbcon,"INSERT INTO dbuser( namedesign, idcategory,idbodyshirt, idcovershirt, idfloorshirt, idproduct, iduser, idcolorshirt)
+            values('$namedesign','$idcategory','$idbodyshirt','$idcovershirt','$idfloorshirt','$idproduct' ,'$iduser' ,'$idcolorshirt' )");
+            return $result;
+        }
+
+
+
+
     }

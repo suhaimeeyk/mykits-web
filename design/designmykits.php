@@ -7,22 +7,24 @@ $name = $_SESSION['name'];
   include_once('../functions.php');
   $insertdata = new db_con();
 
-  if(isset($_POST['insertus'])){
-    $nameuser = $_POST['nameuser'];
-    $addressuser = $_POST['addressuser'];
-    $phoneuser = $_POST['phoneuser'];
-    $idprefix = $_POST['idprefix'];
-    $idsex = $_POST['idsex'];
-    $idposition = $_POST['idposition'];
+  if(isset($_POST['profiledesign'])){
+    $namedesign = $_POST['namedesign'];
+    $idcategory = $_POST['idcategory'];
+    $idbodyshirt = $_POST['idbodyshirt'];
+    $idcovershirt = $_POST['idcovershirt'];
+    $idfloorshirt = $_POST['idfloorshirt'];
+    $idproduct = $_POST['idproduct'];
+    $iduser = $_POST['iduser'];
+    $idcolorshirt = $_POST['idcolorshirt'];
 
-    $sql = $insertdata->insertus($nameuser,$addressuser,$phoneuser,$idprefix,$idsex,$idposition);
+    $sql = $insertdata->profiledesign($namedesign,$idcategory,$idbodyshirt,$idcovershirt,$idsex,$idproduct,$iduser,$idcolorshirt);
 
     if($sql){
         echo "<script>alert('Record Inserted Successfully !!');</script>";
-        echo "<script>window.location.href='indexregister.php'</script>";
+        // echo "<script>window.location.href='indexregister.php'</script>";
     } else{
         echo "<script>alert('Something went wrong !!');</script>";
-        echo "<script>window.location.href='registermykits.php'</script>";
+        // echo "<script>window.location.href='registermykits.php'</script>";
     }
   }
 
@@ -166,16 +168,15 @@ $name = $_SESSION['name'];
                                 src="../assets/img/register1.png"></P>
 
                         <form action="" method="post" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <label for="iduser">ชื่อและนามสกุลผู้ใช้ (<a class="cta-btn"
-                                            href="../registermykits.php">ลงทะเบียน</a>) :</label>
-                                    <select name="iduser" class="form-control" id="iduser" required>
-                                        <option value="">ชื่อผู้ใช้</option>
-                                        <?php
+                            <div class="form-group mt-3">
+                                <label for="iduser">ชื่อและนามสกุลผู้ใช้ (<a class="cta-btn"
+                                        href="../registermykits.php">ลงทะเบียน</a>) :</label>
+                                <select name="iduser" class="form-control" id="iduser" required>
+                                    <option value="">ชื่อผู้ใช้</option>
+                                    <?php
                                     include_once('../connectdb.php');
                                     $usql = "SELECT iduser,nameuser FROM dbuser
-                                    where nameuser IS NOT NULL ORDER BY nameuser;";
+                                    where nameuser IS NOT NULL ORDER BY iduser;";
                                     $res =$conn->query($usql);
                                     if($res->num_rows>0){
                                         while($row = $res->fetch_assoc()){
@@ -184,38 +185,41 @@ $name = $_SESSION['name'];
                                         }
                                     }
                                 ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <label for="idcategory">Size :</label>
-                                    <select name="idcategory" class="form-control" id="idcategory" required>
-                                        <option value="">Size</option>
-                                        <?php
+                                </select>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label for="idcategory">Size :</label>
+                                <P ALIGN=CENTER class="animate__animated animate__fadeInDown"><img
+                                        src="assets/img/size.jpg"></P>
+                                <select name="idcategory" class="form-control" id="idcategory" required>
+                                    <option value="">Size</option>
+                                    <?php
                                     include_once('../connectdb.php');
                                     $usql = "SELECT idcategory,namecategory FROM dbcategory
-                                    where namecategory IS NOT NULL ORDER BY namecategory;";
+                                    where namecategory IS NOT NULL ORDER BY idcategory;";
                                     $res =$conn->query($usql);
                                     if($res->num_rows>0){
                                         while($row = $res->fetch_assoc()){
                                             echo "<option value=" . '"' . $row['idcategory'] . '"' . ">" 
                                             . $row['namecategory'] . "</option>";
+                                             }
                                         }
-                                    }
-                                ?>
-                                    </select>
-                                </div>
+                                    ?>
+                                </select>
                             </div>
 
-                            <div class="form-group mt-3">
-                                <label for="idcolorshirt">Color :</label>
-                                <P ALIGN=CENTER class="animate__animated animate__fadeInDown"><img
-                                        src="assets/img/color.png"></P>
-                                <select name="idcolorshirt" class="form-control" id="idcolorshirt" required>
-                                    <option value="">สี</option>
-                                    <?php
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="idcolorshirt">Color Shirt :</label>
+                                    <P ALIGN=CENTER class="animate__animated animate__fadeInDown"><img
+                                            src="assets/img/color.png"></P>
+                                    <select name="idcolorshirt" class="form-control" id="idcolorshirt" required>
+                                        <option value="">สี</option>
+                                        <?php
                                     include_once('../connectdb.php');
                                     $usql = "SELECT idcolorshirt,namecolorshirt FROM dbcolorshirt
-                                    where namecolorshirt IS NOT NULL ORDER BY namecolorshirt;";
+                                    where namecolorshirt IS NOT NULL ORDER BY idcolorshirt;";
                                     $res =$conn->query($usql);
                                     if($res->num_rows>0){
                                         while($row = $res->fetch_assoc()){
@@ -224,11 +228,49 @@ $name = $_SESSION['name'];
                                         }
                                     }
                                 ?>
-                                </select>
+                                    </select>
+                                </div>
+
+
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <label for="idfloorshirt">Floor Shirt :</label>
+                                    <P ALIGN=CENTER class="animate__animated animate__fadeInDown"><img
+                                            src="assets/img/floor.png"></P>
+                                    <select name="idfloorshirt" class="form-control" id="idfloorshirt" required>
+                                        <option value="">พื้นเสื้อ</option>
+                                        <?php
+                                    include_once('../connectdb.php');
+                                    $usql = "SELECT idfloorshirt,namefloorshirt FROM dbfloorshirt
+                                    where namefloorshirt IS NOT NULL ORDER BY idfloorshirt;";
+                                    $res =$conn->query($usql);
+                                    if($res->num_rows>0){
+                                        while($row = $res->fetch_assoc()){
+                                            echo "<option value=" . '"' . $row['idfloorshirt'] . '"' . ">" 
+                                            . $row['namefloorshirt'] . "</option>";
+                                        }
+                                    }
+                                ?>
+                                    </select>
+                                </div>
                             </div>
+
+                            <!-- <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Your Email" required>
+                                </div>
+                            </div> -->
+
+
+
+
                             <br><br>
                             <div class="text-center">
-                                <button type="submit"><a href="#resume" class="nav-link">NEXT</button></a>
+                                <button type="submit" name="profiledesign">SUBMIT</button>
                             </div>
 
                         </form>
