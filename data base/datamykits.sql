@@ -118,6 +118,8 @@ CREATE TABLE IF NOT EXISTS dbdesign(
     CONSTRAINT fk_idfloorshirt_dbdesign FOREIGN KEY (idfloorshirt) REFERENCES dbfloorshirt(idfloorshirt) ON UPDATE CASCADE,
     idproduct INT(4) NOT NULL,
     CONSTRAINT fk_idproduct_dbdesign FOREIGN KEY (idproduct) REFERENCES dbproduct(idproduct) ON UPDATE CASCADE,
+    iduser INT(4) NOT NULL,
+    CONSTRAINT fk_iduser_dbdesign FOREIGN KEY (iduser) REFERENCES dbuser(iduser) ON UPDATE CASCADE,
     idcolorshirt INT(4) NOT NULL,
     CONSTRAINT fk_idcolorshirt_dbdesign FOREIGN KEY (idcolorshirt) REFERENCES dbcolorshirt(idcolorshirt) ON UPDATE CASCADE
 )CHARACTER SET utf8 COLLATE utf8_general_ci;

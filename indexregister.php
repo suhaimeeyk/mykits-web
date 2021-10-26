@@ -166,7 +166,7 @@ if (!$_SESSION["idlogin"]){
                                         </td>
                                         <td class="column100 column1" data-column="column4" >
                                             <h6 class="text-center">
-                                                {{ user.nameprefix }}{{ user.nameuser }}
+                                                {{ user.nameprefix }} {{ user.nameuser }}
 
                                             </h6>
                                         </td>

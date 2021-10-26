@@ -1,49 +1,3 @@
-<?php session_start();
-include('../conddb.php');
-$name = $_SESSION['name'];
-?>
-
-<?php
-  include_once('../functions.php');
-  $insertdata = new db_con();
-
-  if(isset($_POST['insertus'])){
-    $nameuser = $_POST['nameuser'];
-    $addressuser = $_POST['addressuser'];
-    $phoneuser = $_POST['phoneuser'];
-    $idprefix = $_POST['idprefix'];
-    $idsex = $_POST['idsex'];
-    $idposition = $_POST['idposition'];
-
-    $sql = $insertdata->insertus($nameuser,$addressuser,$phoneuser,$idprefix,$idsex,$idposition);
-
-    if($sql){
-        echo "<script>alert('Record Inserted Successfully !!');</script>";
-        echo "<script>window.location.href='indexregister.php'</script>";
-    } else{
-        echo "<script>alert('Something went wrong !!');</script>";
-        echo "<script>window.location.href='registermykits.php'</script>";
-    }
-  }
-
-  
-  if(isset($_POST['sentaddmin'])){
-    $namesentaddmin = $_POST['namesentaddmin'];
-
-    $sql = $insertdata->insertsentaddmin($namesentaddmin);
-
-    if($sql){
-        echo "<script>alert('Record Inserted Successfully !!');</script>";
-        echo "<script>window.location.href='sentaddmin.php'</script>";
-    } else{
-        echo "<script>alert('Something went wrong !!');</script>";
-        echo "<script>window.location.href='sentaddmin.php'</script>";
-    }
-  }
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,15 +49,15 @@ $name = $_SESSION['name'];
             <ul>
                 <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
                 </li>
-                <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+                <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
                 <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a>
                 </li>
                 <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
                         <span>Portfolio</span></a></li>
                 <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a>
                 </li>
-                <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
-                </li> -->
+                <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
+                </li>
             </ul>
         </nav><!-- .nav-menu -->
 
@@ -117,10 +71,10 @@ $name = $_SESSION['name'];
             <p>อยากให้เสื้อเป็นมากกว่า<span class="typed"
                     data-typed-items="การจินตนาการ. , ความคิด., ความต้องการ."></span></p>
             <div class="social-links">
-                <a href="#contact">
+                <a href="#about" class="facebook">
                     <font color="#f06f54">START NOW</font></i>
                 </a>
-                <a href="../indexmykits.php">
+                <a href="../indexmykits.php" class="facebook">
                     <font color="#f06f54">BACK</font></i>
                 </a>
             </div>
@@ -129,119 +83,8 @@ $name = $_SESSION['name'];
 
     <main id="main">
 
-        <section id="contact" class="contact">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>PROFILE FOR DESIGN</h2>
-                </div>
-
-                <div class="row mt-1">
-
-                    <!-- <div class="col-lg-4">
-                        <div class="info">
-                            <div class="address">
-                                <i class="bi bi-geo-alt"></i>
-                                <h4>Location:</h4>
-                                <p>A108 Adam Street, New York, NY 535022</p>
-                            </div>
-
-                            <div class="email">
-                                <i class="bi bi-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>info@example.com</p>
-                            </div>
-
-                            <div class="phone">
-                                <i class="bi bi-phone"></i>
-                                <h4>Call:</h4>
-                                <p>+1 5589 55488 55s</p>
-                            </div>
-
-                        </div>
-
-                    </div> -->
-                    <div class="container">
-                        <P ALIGN=CENTER class="animate__animated animate__fadeInDown"><img
-                                src="../assets/img/register1.png"></P>
-
-                        <form action="" method="post" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <label for="iduser">ชื่อและนามสกุลผู้ใช้ (<a class="cta-btn"
-                                            href="../registermykits.php">ลงทะเบียน</a>) :</label>
-                                    <select name="iduser" class="form-control" id="iduser" required>
-                                        <option value="">ชื่อผู้ใช้</option>
-                                        <?php
-                                    include_once('../connectdb.php');
-                                    $usql = "SELECT iduser,nameuser FROM dbuser
-                                    where nameuser IS NOT NULL ORDER BY nameuser;";
-                                    $res =$conn->query($usql);
-                                    if($res->num_rows>0){
-                                        while($row = $res->fetch_assoc()){
-                                            echo "<option value=" . '"' . $row['iduser'] . '"' . ">" 
-                                            . $row['nameuser'] . "</option>";
-                                        }
-                                    }
-                                ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <label for="idcategory">Size :</label>
-                                    <select name="idcategory" class="form-control" id="idcategory" required>
-                                        <option value="">Size</option>
-                                        <?php
-                                    include_once('../connectdb.php');
-                                    $usql = "SELECT idcategory,namecategory FROM dbcategory
-                                    where namecategory IS NOT NULL ORDER BY namecategory;";
-                                    $res =$conn->query($usql);
-                                    if($res->num_rows>0){
-                                        while($row = $res->fetch_assoc()){
-                                            echo "<option value=" . '"' . $row['idcategory'] . '"' . ">" 
-                                            . $row['namecategory'] . "</option>";
-                                        }
-                                    }
-                                ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group mt-3">
-                                <label for="idcolorshirt">Color :</label>
-                                <P ALIGN=CENTER class="animate__animated animate__fadeInDown"><img
-                                        src="assets/img/color.png"></P>
-                                <select name="idcolorshirt" class="form-control" id="idcolorshirt" required>
-                                    <option value="">สี</option>
-                                    <?php
-                                    include_once('../connectdb.php');
-                                    $usql = "SELECT idcolorshirt,namecolorshirt FROM dbcolorshirt
-                                    where namecolorshirt IS NOT NULL ORDER BY namecolorshirt;";
-                                    $res =$conn->query($usql);
-                                    if($res->num_rows>0){
-                                        while($row = $res->fetch_assoc()){
-                                            echo "<option value=" . '"' . $row['idcolorshirt'] . '"' . ">" 
-                                            . $row['namecolorshirt'] . "</option>";
-                                        }
-                                    }
-                                ?>
-                                </select>
-                            </div>
-                            <br><br>
-                            <div class="text-center">
-                                <button type="submit"><a href="#resume" class="nav-link">NEXT</button></a>
-                            </div>
-
-                        </form>
-                        <br>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Contact Section -->
-
         <!-- ======= About Section ======= -->
-        <!-- <section id="about" class="about">
+        <section id="about" class="about">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -301,8 +144,7 @@ $name = $_SESSION['name'];
                 </div>
 
             </div>
-        </section> -->
-        <!-- End About Section -->
+        </section><!-- End About Section -->
 
         <!-- ======= Facts Section ======= -->
         <section id="facts" class="facts">
@@ -897,9 +739,77 @@ $name = $_SESSION['name'];
                 </div>
 
             </div>
-        </section>
-        <!-- End Testimonials Section -->
+        </section><!-- End Testimonials Section -->
 
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                </div>
+
+                <div class="row mt-1">
+
+                    <div class="col-lg-4">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>info@example.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>+1 5589 55488 55s</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 mt-5 mt-lg-0">
+
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                    placeholder="Subject" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                    required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
 
     </main><!-- End #main -->
 
