@@ -83,6 +83,91 @@ $name = $_SESSION['name'];
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+    <!-- option -->
+    <link rel="stylesheet" type="text/css" href="option/css/lib/control/iconselect.css">
+    <script type="text/javascript" src="option/lib/control/iconselect.js"></script>
+
+    <script type="text/javascript" src="option/lib/iscroll.js"></script>
+
+    <script>
+    var iconSelect;
+    var selectedText;
+
+    window.onload = function() {
+
+        selectedText = document.getElementById('selected-text');
+
+        document.getElementById('my-icon-select').addEventListener('changed', function(e) {
+            selectedText.value = iconSelect.getSelectedValue();
+        });
+
+        iconSelect = new IconSelect("my-icon-select");
+
+        var icons = [];
+        icons.push({
+            'iconFilePath': 'option/images/icons/1.png',
+            'iconValue': '1'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/2.png',
+            'iconValue': '2'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/3.png',
+            'iconValue': '3'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/4.png',
+            'iconValue': '4'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/5.png',
+            'iconValue': '5'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/6.png',
+            'iconValue': '6'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/7.png',
+            'iconValue': '7'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/8.png',
+            'iconValue': '8'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/9.png',
+            'iconValue': '9'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/10.png',
+            'iconValue': '10'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/11.png',
+            'iconValue': '11'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/12.png',
+            'iconValue': '12'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/13.png',
+            'iconValue': '13'
+        });
+        icons.push({
+            'iconFilePath': 'option/images/icons/14.png',
+            'iconValue': '14'
+        });
+
+        iconSelect.refresh(icons);
+
+    };
+    </script>
+
+
 </head>
 
 <body>
@@ -168,6 +253,7 @@ $name = $_SESSION['name'];
                                 src="../assets/img/register1.png"></P>
 
                         <form action="" method="post" class="php-email-form">
+
                             <div class="form-group mt-3">
                                 <label for="iduser">ชื่อและนามสกุลผู้ใช้ (<a class="cta-btn"
                                         href="../registermykits.php">ลงทะเบียน</a>) :</label>
@@ -247,12 +333,241 @@ $name = $_SESSION['name'];
                                         while($row = $res->fetch_assoc()){
                                             echo "<option value=" . '"' . $row['idfloorshirt'] . '"' . ">" 
                                             . $row['namefloorshirt'] . "</option>";
+                                            }
                                         }
-                                    }
-                                ?>
+                                    ?>
                                     </select>
                                 </div>
                             </div>
+
+
+
+
+
+                            <!-- ======= Portfolio Section ======= -->
+                            <section id="portfolio" class="portfolio">
+                                <br><br>
+                                <div class="container" data-aos="fade-up">
+
+                                    <div class="section-title">
+                                        <h2>PRODUCT DESIGN</h2>
+                                        <P ALIGN=CENTER class="animate__animated animate__fadeInDown"><img
+                                                src="../assets/img/register1.png"></P>
+                                    </div>
+
+                                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="col-lg-12 d-flex justify-content-center">
+                                            <ul id="portfolio-flters">
+                                                <li data-filter="*" class="filter-active">All</li>
+                                                <li data-filter=".filter-app">Limited</li>
+                                                <li data-filter=".filter-card">Sale Items</li>
+                                                <li data-filter=".filter-web">Art Design</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                            <img src="../assets/img/product/Vector Smart Object-3.png" class="img-fluid"
+                                                alt="">
+                                            <div class="portfolio-info">
+                                                <div class="text-center">
+                                                    <a href="design/designmykits.php">
+                                                        <font color="ed502e">GET START CLICK</font>
+                                                    </a>
+                                                </div>
+                                                <h4 href="about.php">Limited 001</h4>
+                                                <p>ลายเสื้อรุ่น Limited ไม่เหมือนใครของมหาวิทยาลัยฟาฏอนี</p>
+                                                <a href="../assets/img/product/Vector Smart Object-3.png"
+                                                    data-gallery="portfolioGallery"
+                                                    class="portfolio-lightbox preview-link"><i
+                                                        class="bx bx-plus"></i></a>
+                                                <a href="portfolio-details.html" class="details-link"
+                                                    title="More Details"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                            <img src="../assets/img/product/Vector Smart Object-8.png" class="img-fluid"
+                                                alt="">
+                                            <div class="portfolio-info">
+                                                <div class="text-center">
+                                                    <a href="design/designmykits.php">
+                                                        <font color="ed502e">GET START CLICK</font>
+                                                    </a>
+                                                </div>
+                                                <h4>Art Design 001</h4>
+                                                <p>Art Design 001 E-SPORT</p>
+                                                <a href="../assets/img/product/Vector Smart Object-8.png"
+                                                    data-gallery="portfolioGallery"
+                                                    class="portfolio-lightbox preview-link"><i
+                                                        class="bx bx-plus"></i></a>
+                                                <a href="portfolio-details.html" class="details-link"
+                                                    title="More Details"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                            <img src="../assets/img/product/Vector Smart Object-9.png" class="img-fluid"
+                                                alt="">
+                                            <div class="portfolio-info">
+                                                <div class="text-center">
+                                                    <a href="design/designmykits.php">
+                                                        <font color="ed502e">GET START CLICK</font>
+                                                    </a>
+                                                </div>
+                                                <h4>Limited 002</h4>
+                                                <p>ลายเสื้อทีมฟุตบอลรุ่น Limited ของทีม Argentina</p>
+                                                <a href="../assets/img/product/Vector Smart Object-9.png"
+                                                    data-gallery="portfolioGallery"
+                                                    class="portfolio-lightbox preview-link"><i
+                                                        class="bx bx-plus"></i></a>
+                                                <a href="portfolio-details.html" class="details-link"
+                                                    title="More Details"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                            <img src="../assets/img/product/Vector Smart Object-7.png" class="img-fluid"
+                                                alt="">
+                                            <div class="portfolio-info">
+                                                <div class="text-center">
+                                                    <a href="design/designmykits.php">
+                                                        <font color="ed502e">GET START CLICK</font>
+                                                    </a>
+                                                </div>
+                                                <h4>Sale Items 001</h4>
+                                                <p>เสื้อ Liverpool BY MYKITS</p>
+                                                <a href="../assets/img/product/Vector Smart Object-7.png"
+                                                    data-gallery="portfolioGallery"
+                                                    class="portfolio-lightbox preview-link"><i
+                                                        class="bx bx-plus"></i></a>
+                                                <a href="portfolio-details.html" class="details-link"
+                                                    title="More Details"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                            <img src="../assets/img/product/Vector Smart Object-2.png" class="img-fluid"
+                                                alt="">
+                                            <div class="portfolio-info">
+                                                <div class="text-center">
+                                                    <a href="design/designmykits.php">
+                                                        <font color="ed502e">GET START CLICK</font>
+                                                    </a>
+                                                </div>
+                                                <h4>Art Design 002</h4>
+                                                <p>เสื้อ Liverpool BY MYKITS</p>
+                                                <a href="../assets/img/product/Vector Smart Object-2.png"
+                                                    data-gallery="portfolioGallery"
+                                                    class="portfolio-lightbox preview-link"><i
+                                                        class="bx bx-plus"></i></a>
+                                                <a href="portfolio-details.html" class="details-link"
+                                                    title="More Details"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                            <img src="../assets/img/product/Vector Smart Object-6.png" class="img-fluid"
+                                                alt="">
+                                            <div class="portfolio-info">
+                                                <div class="text-center">
+                                                    <a href="design/designmykits.php">
+                                                        <font color="ed502e">GET START CLICK</font>
+                                                    </a>
+                                                </div>
+                                                <h4>Limited 003</h4>
+                                                <p>เสื้อ Aresanal BY MYKITS</p>
+                                                <a href="../assets/img/product/Vector Smart Object-6.png"
+                                                    data-gallery="portfolioGallery"
+                                                    class="portfolio-lightbox preview-link"><i
+                                                        class="bx bx-plus"></i></a>
+                                                <a href="portfolio-details.html" class="details-link"
+                                                    title="More Details"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                            <img src="../assets/img/product/Vector Smart Object.png" class="img-fluid"
+                                                alt="">
+                                            <div class="portfolio-info">
+                                                <div class="text-center">
+                                                    <a href="design/designmykits.php">
+                                                        <font color="ed502e">GET START CLICK</font>
+                                                    </a>
+                                                </div>
+                                                <h4>Sale Items 002</h4>
+                                                <p>เสื้อ Manchester BY MYKITS</p>
+                                                <a href="../assets/img/product/Vector Smart Object.png"
+                                                    data-gallery="portfolioGallery"
+                                                    class="portfolio-lightbox preview-link"><i
+                                                        class="bx bx-plus"></i></a>
+                                                <a href="portfolio-details.html" class="details-link"
+                                                    title="More Details"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                            <img src="../assets/img/product/Vector Smart Object-5.png" class="img-fluid"
+                                                alt="">
+                                            <div class="portfolio-info">
+                                                <div class="text-center">
+                                                    <a href="design/designmykits.php">
+                                                        <font color="ed502e">GET START CLICK</font>
+                                                    </a>
+                                                </div>
+                                                <h4>Sale Items 003</h4>
+                                                <p>เสื้อ Sper BY MYKITS</p>
+                                                <a href="../assets/img/product/Vector Smart Object-5.png"
+                                                    data-gallery="portfolioGallery"
+                                                    class="portfolio-lightbox preview-link"><i
+                                                        class="bx bx-plus"></i></a>
+                                                <a href="portfolio-details.html" class="details-link"
+                                                    title="More Details"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                            <img src="../assets/img/product/Vector Smart Object-4.png" class="img-fluid"
+                                                alt="">
+                                            <div class="portfolio-info">
+                                                <div class="text-center">
+                                                    <a href="design/designmykits.php">
+                                                        <font color="ed502e">GET START CLICK</font>
+                                                    </a>
+                                                </div>
+                                                <h4>Art Design 003</h4>
+                                                <p>ลายเสื้อทีมฟุตบอลรุ่น Limited ของ RUAMPEUAN FC</p>
+                                                <a href="../assets/img/product/Vector Smart Object-4.png"
+                                                    data-gallery="portfolioGallery"
+                                                    class="portfolio-lightbox preview-link"><i
+                                                        class="bx bx-plus"></i></a>
+                                                <a href="portfolio-details.html" class="details-link"
+                                                    title="More Details"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </section><!-- End Portfolio Section -->
+
+
+                            <div class="text-center">
+                                <h2>กรุณาเลือกสินค้าที่คุณสนใจ</h2>
+
+                                <div ALIGN=CENTER><br>
+                                    <div id="my-icon-select"></div>
+                                    <input type="text" id="selected-text" name="selected-text" style="width:65px;">
+                                </div>
+                            </div>
+
+
+
+
+
 
                             <!-- <div class="row">
                                 <div class="col-md-6 form-group">
@@ -344,135 +659,6 @@ $name = $_SESSION['name'];
 
             </div>
         </section> -->
-        <!-- End About Section -->
-
-        <!-- ======= Facts Section ======= -->
-        <section id="facts" class="facts">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Facts</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="count-box">
-                            <i class="bi bi-emoji-smile"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Happy Clients</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                        <div class="count-box">
-                            <i class="bi bi-journal-richtext"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Projects</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                        <div class="count-box">
-                            <i class="bi bi-headset"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Hours Of Support</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                        <div class="count-box">
-                            <i class="bi bi-award"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Awards</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Facts Section -->
-
-        <!-- ======= Skills Section ======= -->
-        <section id="skills" class="skills section-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Skills</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row skills-content">
-
-                    <div class="col-lg-6">
-
-                        <div class="progress">
-                            <span class="skill">HTML <i class="val">100%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress">
-                            <span class="skill">CSS <i class="val">90%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress">
-                            <span class="skill">JavaScript <i class="val">75%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-6">
-
-                        <div class="progress">
-                            <span class="skill">PHP <i class="val">80%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress">
-                            <span class="skill">WordPress/CMS <i class="val">90%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress">
-                            <span class="skill">Photoshop <i class="val">55%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Skills Section -->
 
         <!-- ======= Resume Section ======= -->
         <section id="resume" class="resume">
