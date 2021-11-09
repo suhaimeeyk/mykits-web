@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS dbsex(
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*----------dbpossition----------*/
 CREATE TABLE IF NOT EXISTS dbposition(
- 	idposition INT(4) NOT NULL,
+ 	idposition INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idposition PRIMARY KEY (idposition),
     namepossition char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS dbuser(
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*-------------librarian-----------*/
 CREATE TABLE IF NOT EXISTS dbaddmin(
-    idaddmin INT(4) NOT NULL,
+    idaddmin INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idaddmin PRIMARY KEY(idaddmin),
     nameaddmin CHAR(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     addressaddmin VARCHAR(80) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
@@ -55,13 +55,19 @@ CREATE TABLE IF NOT EXISTS dbsentaddmin(
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*-------------dbcategory-----------*/
 CREATE TABLE IF NOT EXISTS dbcategory(
- 	idcategory INT(4) NOT NULL,
+ 	idcategory INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idcategory PRIMARY KEY (idcategory),
     namecategory VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
+/*-------------dbsize-----------*/
+CREATE TABLE IF NOT EXISTS dbsize(
+ 	idsize INT(4) AUTO_INCREMENT NOT NULL,
+    CONSTRAINT pk_idsize PRIMARY KEY (idsize),
+    namesize VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+)CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*-------------dbstriped-----------*/
 CREATE TABLE IF NOT EXISTS dbstriped(
- 	idstriped INT(4) NOT NULL,
+ 	idstriped INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idstriped PRIMARY KEY (idstriped),
     namestriped VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     idcategory INT(4) NOT NULL,
@@ -70,7 +76,7 @@ CREATE TABLE IF NOT EXISTS dbstriped(
 
 /*-------------dbproduct-----------*/
 CREATE TABLE IF NOT EXISTS dbproduct(
- 	idproduct INT(4) NOT NULL,
+ 	idproduct INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idproduct PRIMARY KEY (idproduct),
     nameproduct VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     idstriped INT(4) NOT NULL,
@@ -80,26 +86,26 @@ CREATE TABLE IF NOT EXISTS dbproduct(
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*-------------dbbodyshirt-----------*/
 CREATE TABLE IF NOT EXISTS dbbodyshirt(
- 	idbodyshirt INT(4) NOT NULL,
+ 	idbodyshirt INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idbodyshirt PRIMARY KEY (idbodyshirt),
     fronbody VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     behindbody VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*-------------dbcovershirt-----------*/
 CREATE TABLE IF NOT EXISTS dbcovershirt(
- 	idcovershirt INT(4) NOT NULL,
+ 	idcovershirt INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idcovershirt PRIMARY KEY (idcovershirt),
     namecovershirt VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*-------------dbcolorshirt-----------*/
 CREATE TABLE IF NOT EXISTS dbcolorshirt(
- 	idcolorshirt INT(4) NOT NULL,
+ 	idcolorshirt INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idcolorshirt PRIMARY KEY (idcolorshirt),
     namecolorshirt VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*-------------dbfloorshirt-----------*/
 CREATE TABLE IF NOT EXISTS dbfloorshirt(
- 	idfloorshirt INT(4) NOT NULL,
+ 	idfloorshirt INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_idfloorshirt PRIMARY KEY (idfloorshirt),
     namefloorshirt VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
@@ -120,12 +126,14 @@ CREATE TABLE IF NOT EXISTS dbdesign(
     CONSTRAINT fk_idproduct_dbdesign FOREIGN KEY (idproduct) REFERENCES dbproduct(idproduct) ON UPDATE CASCADE,
     iduser INT(4) NOT NULL,
     CONSTRAINT fk_iduser_dbdesign FOREIGN KEY (iduser) REFERENCES dbuser(iduser) ON UPDATE CASCADE,
+    idsize INT(4) NOT NULL,
+    CONSTRAINT fk_idsize_dbproduct FOREIGN KEY (idsize) REFERENCES dbsize(idsize) ON UPDATE CASCADE,
     idcolorshirt INT(4) NOT NULL,
     CONSTRAINT fk_idcolorshirt_dbdesign FOREIGN KEY (idcolorshirt) REFERENCES dbcolorshirt(idcolorshirt) ON UPDATE CASCADE
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*-------------dbdetailbuy-----------*/
 CREATE TABLE IF NOT EXISTS dbdetailbuy(
- 	iddetailbuy INT(4) NOT NULL,
+ 	iddetailbuy INT(4) AUTO_INCREMENT NOT NULL,
     CONSTRAINT pk_iddetailbuy PRIMARY KEY (iddetailbuy),
     idaddmin INT(4) NOT NULL,
     CONSTRAINT fk_idaddmin_dbdetailbuy FOREIGN KEY (idaddmin) REFERENCES dbaddmin(idaddmin) ON UPDATE CASCADE,

@@ -8,23 +8,39 @@ $name = $_SESSION['name'];
   $insertdata = new db_con();
 
   if(isset($_POST['profiledesign'])){
-    $namedesign = $_POST['namedesign'];
-    $idcategory = $_POST['idcategory'];
-    $idbodyshirt = $_POST['idbodyshirt'];
-    $idcovershirt = $_POST['idcovershirt'];
-    $idfloorshirt = $_POST['idfloorshirt'];
-    $idproduct = $_POST['idproduct'];
-    $iduser = $_POST['iduser'];
-    $idcolorshirt = $_POST['idcolorshirt'];
 
-    $sql = $insertdata->profiledesign($namedesign,$idcategory,$idbodyshirt,$idcovershirt,$idsex,$idproduct,$iduser,$idcolorshirt);
+    $namedesign = $_POST['namedesign'];//1
+    $idcategory = $_POST['idcategory'];//2
+    $idbodyshirt = $_POST['idbodyshirt'];//3
+    $idcovershirt = $_POST['idcovershirt'];//4
+    $idfloorshirt = $_POST['idfloorshirt']; //5
+    $idproduct = $_POST['idproduct']; //6
+    $iduser = $_POST['iduser']; //7
+    $idcolorshirt = $_POST['idcolorshirt']; //8
+    $idsize = $_POST['idsize']; //9
+
+    $sql = $insertdata->profiledesign($namedesign,$idcategory,$idbodyshirt,$idcovershirt,$idproduct,$iduser,$idcolorshirt,$idsize,$idfloorshirt);
 
     if($sql){
-        echo "<script>alert('Record Inserted Successfully !!');</script>";
-        // echo "<script>window.location.href='indexregister.php'</script>";
-    } else{
+
+        // echo "<script>alert('คุณได้ทำการสั่งเสื้อแล้ว !!');</script>";
+        // echo "<script>window.location.href='designmykits.php'</script>";
+        
+        echo'
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <srcript src="https://code.jquery.com/jquery-3.6.0.min.js"></srcript>
+        
+    ';
+       echo "
+        <script>
+        swal('คุณได้ทำการสั่งเสื้อแล้ว !!','กดปุ่มเพื่อลองใหม่!','success');
+        </script>";
+
+
+    } 
+    else{
         echo "<script>alert('Something went wrong !!');</script>";
-        // echo "<script>window.location.href='registermykits.php'</script>";
+        echo "<script>window.location.href='designmykits.php'</script>";
     }
   }
 
@@ -84,89 +100,6 @@ $name = $_SESSION['name'];
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-    <!-- option -->
-    <link rel="stylesheet" type="text/css" href="option/css/lib/control/iconselect.css">
-    <script type="text/javascript" src="option/lib/control/iconselect.js"></script>
-
-    <script type="text/javascript" src="option/lib/iscroll.js"></script>
-
-    <script>
-    var iconSelect;
-    var selectedText;
-
-    window.onload = function() {
-
-        selectedText = document.getElementById('selected-text');
-
-        document.getElementById('my-icon-select').addEventListener('changed', function(e) {
-            selectedText.value = iconSelect.getSelectedValue();
-        });
-
-        iconSelect = new IconSelect("my-icon-select");
-
-        var icons = [];
-        icons.push({
-            'iconFilePath': 'option/images/icons/1.png',
-            'iconValue': '1'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/2.png',
-            'iconValue': '2'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/3.png',
-            'iconValue': '3'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/4.png',
-            'iconValue': '4'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/5.png',
-            'iconValue': '5'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/6.png',
-            'iconValue': '6'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/7.png',
-            'iconValue': '7'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/8.png',
-            'iconValue': '8'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/9.png',
-            'iconValue': '9'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/10.png',
-            'iconValue': '10'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/11.png',
-            'iconValue': '11'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/12.png',
-            'iconValue': '12'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/13.png',
-            'iconValue': '13'
-        });
-        icons.push({
-            'iconFilePath': 'option/images/icons/14.png',
-            'iconValue': '14'
-        });
-
-        iconSelect.refresh(icons);
-
-    };
-    </script>
-
 
 </head>
 
@@ -196,7 +129,7 @@ $name = $_SESSION['name'];
 
     </header><!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
+    <!-- =======  Hero Section  ======= -->
     <section id="hero" class="d-flex flex-column justify-content-center">
         <div class="container" data-aos="zoom-in" data-aos-delay="100">
             <h1>START DESIGN<font color="f06f54"> MYKITS</font>
@@ -248,11 +181,12 @@ $name = $_SESSION['name'];
                         </div>
 
                     </div> -->
+
                     <div class="container">
                         <P ALIGN=CENTER class="animate__animated animate__fadeInDown"><img
                                 src="../assets/img/register1.png"></P>
 
-                        <form action="" method="post" class="php-email-form">
+                        <form action="" method="post">
 
                             <div class="form-group mt-3">
                                 <label for="iduser">ชื่อและนามสกุลผู้ใช้ (<a class="cta-btn"
@@ -275,20 +209,20 @@ $name = $_SESSION['name'];
                             </div>
 
                             <div class="form-group mt-3">
-                                <label for="idcategory">Size :</label>
+                                <label for="idsize">Size :</label>
                                 <P ALIGN=CENTER class="animate__animated animate__fadeInDown"><img
                                         src="assets/img/size.jpg"></P>
-                                <select name="idcategory" class="form-control" id="idcategory" required>
+                                <select name="idsize" class="form-control" id="idsize" required>
                                     <option value="">Size</option>
                                     <?php
                                     include_once('../connectdb.php');
-                                    $usql = "SELECT idcategory,namecategory FROM dbcategory
-                                    where namecategory IS NOT NULL ORDER BY idcategory;";
+                                    $usql = "SELECT idsize,namesize FROM dbsize
+                                    where namesize IS NOT NULL ORDER BY idsize;";
                                     $res =$conn->query($usql);
                                     if($res->num_rows>0){
                                         while($row = $res->fetch_assoc()){
-                                            echo "<option value=" . '"' . $row['idcategory'] . '"' . ">" 
-                                            . $row['namecategory'] . "</option>";
+                                            echo "<option value=" . '"' . $row['idsize'] . '"' . ">" 
+                                            . $row['namesize'] . "</option>";
                                              }
                                         }
                                     ?>
@@ -341,11 +275,15 @@ $name = $_SESSION['name'];
                             </div>
 
 
+                            <div class="mb-3">
+                                <label for="namedesign" class="form-label">กรุณาตั้งชื่อเสื้อที่จะสั่ง</label>
+                                <input type="text" class="form-control" name="namedesign" required>
+                            </div>
 
 
 
                             <!-- ======= Portfolio Section ======= -->
-                            <section id="portfolio" class="portfolio">
+                            <!-- <section id="portfolio" class="portfolio">
                                 <br><br>
                                 <div class="container" data-aos="fade-up">
 
@@ -552,41 +490,97 @@ $name = $_SESSION['name'];
                                     </div>
 
                                 </div>
-                            </section><!-- End Portfolio Section -->
+                            </section> -->
+                            <!-- End Portfolio Section -->
 
 
-                            <div class="text-center">
-                                <h2>กรุณาเลือกสินค้าที่คุณสนใจ</h2>
-
-                                <div ALIGN=CENTER><br>
-                                    <div id="my-icon-select"></div>
-                                    <input type="text" id="selected-text" name="selected-text" style="width:65px;">
-                                </div>
+                            <div class="form-group mt-3">
+                                <label for="idproduct">เลือกสินค้าที่สนใจ :</label>
+                                <select name="idproduct" class="form-control" id="idproduct" required>
+                                    <option value="">กรุณาเลือกสินค้า</option>
+                                    <?php
+                                    include_once('../connectdb.php');
+                                    $usql = "SELECT idproduct,nameproduct FROM dbproduct
+                                    where nameproduct IS NOT NULL ORDER BY idproduct;";
+                                    $res =$conn->query($usql);
+                                    if($res->num_rows>0){
+                                        while($row = $res->fetch_assoc()){
+                                            echo "<option value=" . '"' . $row['idproduct'] . '"' . ">" 
+                                            . $row['nameproduct'] . "</option>";
+                                        }
+                                    }
+                                ?>
+                                </select>
                             </div>
 
 
+                            <div class="form-group mt-3">
+                                <label for="idbodyshirt">BODY :</label>
+                                <select name="idbodyshirt" class="form-control" id="idbodyshirt" required>
+                                    <option value="">กรุณาเลือกแบบหน้าหลัง</option>
+                                    <?php
+                                    include_once('../connectdb.php');
+                                    $usql = "SELECT idbodyshirt,fronbody,behindbody FROM dbbodyshirt
+                                    where fronbody IS NOT NULL ORDER BY idbodyshirt;";
+                                    $res =$conn->query($usql);
+                                    if($res->num_rows>0){
+                                        while($row = $res->fetch_assoc()){
+                                            echo "<option value=" . '"' . $row['idbodyshirt'] . '"' . ">" 
+                                            . $row['fronbody']  . '-' . $row['behindbody'] . "</option>";
+                                        }
+                                    }
+                                ?>
+                                </select>
+                            </div>
 
+                            <div class="form-group mt-3">
+                                <label for="idcovershirt">ปกเสื้อ :</label>
+                                <select name="idcovershirt" class="form-control" id="idcovershirt" required>
+                                    <option value="">กรุณาเลือกแบบปกเสื้อ</option>
+                                    <?php
+                                    include_once('../connectdb.php');
+                                    $usql = "SELECT idcovershirt,namecovershirt FROM dbcovershirt
+                                    where namecovershirt IS NOT NULL ORDER BY idcovershirt;";
+                                    $res =$conn->query($usql);
+                                    if($res->num_rows>0){
+                                        while($row = $res->fetch_assoc()){
+                                            echo "<option value=" . '"' . $row['idcovershirt'] . '"' . ">" 
+                                            . $row['namecovershirt'] . "</option>";
+                                        }
+                                    }
+                                ?>
+                                </select>
+                            </div>
 
-
-
-                            <!-- <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
-                                </div>
-                            </div> -->
+                            <div class="form-group mt-3">
+                                <label for="idcategory">ประเภทเสื้อการสั่งซื้อ :</label>
+                                <select name="idcategory" class="form-control" id="idcategory" required>
+                                    <option value="">กรุณาเลือกแบบปกเสื้อ</option>
+                                    <?php
+                                    include_once('../connectdb.php');
+                                    $usql = "SELECT idcategory,namecategory FROM dbcategory
+                                    where namecategory IS NOT NULL ORDER BY idcategory;";
+                                    $res =$conn->query($usql);
+                                    if($res->num_rows>0){
+                                        while($row = $res->fetch_assoc()){
+                                            echo "<option value=" . '"' . $row['idcategory'] . '"' . ">" 
+                                            . $row['namecategory'] . "</option>";
+                                        }
+                                    }
+                                ?>
+                                </select>
+                            </div>
 
 
 
 
                             <br><br>
                             <div class="text-center">
-                                <button type="submit" name="profiledesign">SUBMIT</button>
+                                <button type="submit" name="profiledesign" class="btn btn-warning" >SUBMIT</button>
                             </div>
+
+                            <!-- <P ALIGN=CENTER><button type="submit" name="profiledesign" class="btn btn-dark">INSERT</button>
+                            </P> -->
 
                         </form>
                         <br>
