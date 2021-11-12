@@ -90,12 +90,13 @@ if (!$_SESSION["idlogin"]){
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <style>
-/* #ไม่ให้รันขึ้นตัวแปร */
-[v-cloak] {
-    display: none;
-}
-</style>
+    <style>
+    /* #ไม่ให้รันขึ้นตัวแปร */
+    [v-cloak] {
+        display: none;
+    }
+    </style>
+
 </head>
 
 <body background="assets/img/back1.png">
@@ -120,7 +121,7 @@ if (!$_SESSION["idlogin"]){
         <div style='overflow-x:auto'>
             <div class="container" data-aos="fade-up">
                 <div class="wrap-table100">
-                    <div class="table100 ver1 " id="app"  v-cloak>
+                    <div class="table100 ver1 " style='overflow-x:auto'>
                         <table data-vertable="ver1">
                             <thead>
                                 <tr class="row100 head">
@@ -140,15 +141,15 @@ if (!$_SESSION["idlogin"]){
                                 <tr class="row100" v-for="sentaddmin in allData">
                                     <td class="column100 column2" data-column="column2">
                                         <h6 class="text-center">
-                                        {{ sentaddmin.idsentaddmin }}</h6>
+                                            {{ sentaddmin.idsentaddmin }}</h6>
                                     </td>
                                     <td class="column100 column3" data-column="column3">
                                         <h6 class="text-center">
-                                        {{ sentaddmin.namesentaddmin }}</h6>
+                                            {{ sentaddmin.namesentaddmin }}</h6>
                                     </td>
                                     <td class="column100 column4" data-column="column4">
                                         <h6 class="text-center">
-                                        <button type="button" name="delete" class="btn btn-danger btn-xs delete"
+                                            <button type="button" name="delete" class="btn btn-danger btn-xs delete"
                                                 data-bs-toggle="modal" data-bs-target="#myModal"
                                                 @click="deleteData(sentaddmin.idsentaddmin)">
                                                 Delete
@@ -238,9 +239,9 @@ if (!$_SESSION["idlogin"]){
         </div>
     </footer><!-- End Footer -->
 
-      
-       <!-- Axios and vue.js-->
-       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <!-- Axios and vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

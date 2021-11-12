@@ -1,6 +1,6 @@
 
 <?php
-  include_once('functions.php');
+  include_once('../functions.php');
   $insertdata = new db_con();
   if(isset($_POST['sentaddmin'])){
     $namesentaddmin = $_POST['namesentaddmin'];

@@ -143,7 +143,28 @@
             return $result;
         }
 
+        public function fetchdataprofiledesign(){
+            $result = mysqli_query($this->dbcon,"SELECT u.iddesign, u.namedesign , p.namecategory , s.fronbody , s.behindbody , f.namecovershirt , fs.namefloorshirt , pd.nameproduct , us.nameuser , ns.namesize , cs.namecolorshirt
+            
+                                                 FROM dbcategory as p
+
+                                                 INNER JOIN dbdesign as u ON p.idcategory = u.idcategory
+                                                 INNER JOIN dbbodyshirt as s ON s.idbodyshirt = u.idbodyshirt
+                                                 INNER JOIN dbcovershirt as f ON f.idcovershirt = u.idcovershirt
+                                                 INNER JOIN dbfloorshirt as fs ON fs.idfloorshirt = u.idfloorshirt
+                                                 INNER JOIN dbproduct as pd ON pd.idproduct = u.idproduct
+                                                 INNER JOIN dbuser as us ON us.iduser = u.iduser
+                                                 INNER JOIN dbsize as ns ON ns.idsize = u.idsize
+                                                 INNER JOIN dbcolorshirt as cs ON cs.idcolorshirt = u.idcolorshirt
+
+
+                                                 where u.iddesign IS NOT NULL ORDER BY u.iddesign");
+                                                 return $result;
+    }
+
 
 
 
     }
+
+    

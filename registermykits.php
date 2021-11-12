@@ -4,6 +4,7 @@ $name = $_SESSION['name'];
 ?>
 
 <?php
+
   include_once('functions.php');
   $insertdata = new db_con();
 

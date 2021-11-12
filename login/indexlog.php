@@ -1,6 +1,7 @@
 <?php
 include('h.php');
 ?>
+
 <style type="text/css">
 #btn {
     width: 100%;
@@ -37,7 +38,7 @@ include('h.php');
                     </div>
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <button type="submit" class="btn btn-success" id="btn">
+                            <button type="submit"  name="Login" class="btn btn-success" id="btn">
                                 <span class="glyphicon glyphicon-log-in"> </span>
                                 Login
                             </button>
@@ -58,5 +59,9 @@ include('h.php');
 
     </div>
     <a href="indexmykits.php" class="btn btn-primary">เข้าสู่หน้าเว็บไซต์</a>
+
+
+    
+
 
 </body>
