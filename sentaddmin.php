@@ -1,19 +1,8 @@
-<?php session_start();
-include('conddb.php');
-$name = $_SESSION['name'];
-?>
 
-<?php 
- 
-if (!$_SESSION["idlogin"]){
- 
-	  Header("Location: login/indexlog.php");
- 
-}else{
-    
-    ?>
+
 
 <?php
+
   include_once('functions.php');
   $insertdata = new db_con();
   if(isset($_POST['sentaddmin'])){
@@ -118,7 +107,7 @@ if (!$_SESSION["idlogin"]){
             </div>
         </div>
         <h3 class="text-center" data-aos="fade-up">รายการที่มีการติดต่อ</h3>
-        <div style='overflow-x:auto'>
+        <div style='overflow-x:auto'  id="app">
             <div class="container" data-aos="fade-up">
                 <div class="wrap-table100">
                     <div class="table100 ver1 " style='overflow-x:auto'>
@@ -260,5 +249,3 @@ if (!$_SESSION["idlogin"]){
 </body>
 
 </html>
-
-<?php }?>

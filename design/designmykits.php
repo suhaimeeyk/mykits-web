@@ -1,7 +1,3 @@
-<?php session_start();
-include('../conddb.php');
-$name = $_SESSION['name'];
-?>
 
 <?php
   include_once('../functions.php');
@@ -35,24 +31,13 @@ $name = $_SESSION['name'];
 
 
     } 
+    
     else{
         echo "<script>alert('Something went wrong !!');</script>";
         echo "<script>window.location.href='designmykits.php'</script>";
     }
   }
 
-  
-  if(isset($_POST['sentaddmin'])){
-    $namesentaddmin = $_POST['namesentaddmin'];
-
-    $sql = $insertdata->insertsentaddmin($namesentaddmin);
-
-    if($sql){
-        echo "<script>alert('Record Inserted Successfully !!');</script>";
-    } else{
-        echo "<script>alert('Something went wrong !!');</script>";
-    }
-  }
 
 
 ?>
@@ -742,7 +727,7 @@ $name = $_SESSION['name'];
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>MENU</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="indexmykits.php">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../indexmykits.php">Home</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Design</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="../about.php">About</a></li>
                         </ul>

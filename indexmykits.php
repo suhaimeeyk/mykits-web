@@ -1,7 +1,4 @@
-<?php session_start();
-include('conddb.php');
-$name = $_SESSION['name'];
-?>
+
 
 
 
@@ -308,6 +305,7 @@ $name = $_SESSION['name'];
     <script src="assets/vendor/purecounter/purecounter.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
+    <script src="log.js"></script>
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 

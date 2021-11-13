@@ -1,7 +1,4 @@
-<?php session_start();
-include('conddb.php');
-$name = $_SESSION['name'];
-?>
+
 
 <?php
   include_once('functions.php');

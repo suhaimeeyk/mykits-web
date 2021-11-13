@@ -1,17 +1,4 @@
-<?php session_start();
-include('conddb.php');
-$name = $_SESSION['name'];
-?>
 
-<?php 
- 
-if (!$_SESSION["idlogin"]){
- 
-	  Header("Location: login/indexlog.php");
- 
-}else{
-    
-    ?>
 
 
 <?php
@@ -330,5 +317,3 @@ if (!$_SESSION["idlogin"]){
 </body>
 
 </html>
-
-<?php }?>

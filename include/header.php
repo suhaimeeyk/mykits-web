@@ -15,17 +15,19 @@
                   <li><a class="nav-link scrollto " href="indexregister.php">รายชื่อผู้ลงทะเบียน</a></li>
                   <li><a class="nav-link scrollto " href="sentaddmin.php">ผู้ใช้ที่ติดต่อ</a></li>
 
-                  <li class="dropdown"><a href="#"><span><?php echo $name; ?></span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <!-- <li><a href="./proflie/myprofile.php">ข้อมูลส่วนตัว</a></li> -->
-                            <li class="dropdown"><a href="#"><span>ข้อมูลล็อคอิน</span> <i
+                  <li class="dropdown"><a href="registerlogin.php">ข้อมูลล็อคอิน</span>
+                          <!-- <i class="bi bi-chevron-down"></i> -->
+                      </a>
+                      <ul>
+                          <!-- <li><a href="./proflie/myprofile.php">ข้อมูลส่วนตัว</a></li> -->
+                          <!-- <li class="dropdown"><a href="#"><span>ข้อมูลล็อคอิน</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
                                     <li><a href="registerlogin.php">ข้อมูลสมัครสสมาชิก</a></li>
                                 </ul>
-                            </li>
-                        </ul>
-                    </li>
+                            </li> -->
+                      </ul>
+                  </li>
 
                   <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
 
@@ -35,10 +37,29 @@
                   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                   <srcript src="https://code.jquery.com/jquery-3.6.0.min.js"></srcript>
 
-                  <li><a class="getstarted scrollto" onclick="return confirm('แน่ใจหรือไหมที่จะออกจากระบบ ?');"
-                          href="login/logout.php">LOGOUT 
+                  <li><a class="getstarted scrollto" onclick="return confirm('แน่ใจหรือไหมที่จะออกจากระบบ ?');" href="./jwt-login/index.php"
+                          id='logout'>LOGOUT
                           <!-- | สวัสดีคุณแอดมิน (<?php echo $name; ?>) -->
-                        </a></li>
+                      </a></li>
+
+                  <script>
+                  $(document).on('click', '#logout', function() {
+                      showLoginPage();
+                      $('#response').html("<div class='alert alert-info'>You are logged out.</div>");
+                  });
+
+                  function showLoginPage() {
+
+                      // remove jwt
+                      setCookie("jwt", "", 1);
+
+
+
+                      $('#content').html(html);
+                      clearResponse();
+                      showLoggedOutMenu();
+                  }
+                  </script>
               </ul>
               <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
